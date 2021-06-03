@@ -58,6 +58,15 @@ namespace CppCLRWinformsProjekt {
 
 
 
+	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button4;
+
+
+
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -93,7 +102,14 @@ namespace CppCLRWinformsProjekt {
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
+			this->splitContainer1->Panel1->SuspendLayout();
 			this->splitContainer1->Panel2->SuspendLayout();
 			this->splitContainer1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -104,6 +120,15 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->splitContainer1->Location = System::Drawing::Point(0, 0);
 			this->splitContainer1->Name = L"splitContainer1";
+			// 
+			// splitContainer1.Panel1
+			// 
+			this->splitContainer1->Panel1->Controls->Add(this->button6);
+			this->splitContainer1->Panel1->Controls->Add(this->button5);
+			this->splitContainer1->Panel1->Controls->Add(this->button4);
+			this->splitContainer1->Panel1->Controls->Add(this->button3);
+			this->splitContainer1->Panel1->Controls->Add(this->button2);
+			this->splitContainer1->Panel1->Controls->Add(this->button1);
 			// 
 			// splitContainer1.Panel2
 			// 
@@ -166,6 +191,60 @@ namespace CppCLRWinformsProjekt {
 			this->Column4->MinimumWidth = 6;
 			this->Column4->Name = L"Column4";
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(3, 3);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(115, 70);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(123, 3);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(115, 70);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(3, 107);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(235, 70);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"button3";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(3, 183);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(235, 70);
+			this->button4->TabIndex = 3;
+			this->button4->Text = L"button4";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(3, 335);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(235, 70);
+			this->button6->TabIndex = 5;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(3, 259);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(235, 70);
+			this->button5->TabIndex = 4;
+			this->button5->Text = L"button5";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -175,6 +254,7 @@ namespace CppCLRWinformsProjekt {
 			this->Name = L"Form1";
 			this->Text = L"Commandes Composants";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
+			this->splitContainer1->Panel1->ResumeLayout(false);
 			this->splitContainer1->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
 			this->splitContainer1->ResumeLayout(false);
