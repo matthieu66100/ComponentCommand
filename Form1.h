@@ -68,6 +68,8 @@ namespace CppCLRWinformsProjekt {
 
 
 
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -96,18 +98,18 @@ namespace CppCLRWinformsProjekt {
 		void InitializeComponent(void)
 		{
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Test = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
-			this->button5 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
 			this->splitContainer1->Panel1->SuspendLayout();
 			this->splitContainer1->Panel2->SuspendLayout();
@@ -134,8 +136,63 @@ namespace CppCLRWinformsProjekt {
 			// 
 			this->splitContainer1->Panel2->Controls->Add(this->dataGridView1);
 			this->splitContainer1->Size = System::Drawing::Size(1359, 609);
-			this->splitContainer1->SplitterDistance = 241;
+			this->splitContainer1->SplitterDistance = 240;
 			this->splitContainer1->TabIndex = 0;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(3, 335);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(235, 70);
+			this->button6->TabIndex = 5;
+			this->button6->Text = L"button6";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(3, 259);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(235, 70);
+			this->button5->TabIndex = 4;
+			this->button5->Text = L"button5";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(3, 183);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(235, 70);
+			this->button4->TabIndex = 3;
+			this->button4->Text = L"button4";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(3, 107);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(235, 70);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"button3";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(123, 3);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(115, 70);
+			this->button2->TabIndex = 1;
+			this->button2->Text = L"button2";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(3, 3);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(114, 70);
+			this->button1->TabIndex = 0;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// dataGridView1
 			// 
@@ -152,7 +209,7 @@ namespace CppCLRWinformsProjekt {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1108, 603);
+			this->dataGridView1->Size = System::Drawing::Size(1109, 603);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick);
 			// 
@@ -191,60 +248,6 @@ namespace CppCLRWinformsProjekt {
 			this->Column4->MinimumWidth = 6;
 			this->Column4->Name = L"Column4";
 			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(3, 3);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(115, 70);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"button1";
-			this->button1->UseVisualStyleBackColor = true;
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(123, 3);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(115, 70);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"button2";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// button3
-			// 
-			this->button3->Location = System::Drawing::Point(3, 107);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(235, 70);
-			this->button3->TabIndex = 2;
-			this->button3->Text = L"button3";
-			this->button3->UseVisualStyleBackColor = true;
-			// 
-			// button4
-			// 
-			this->button4->Location = System::Drawing::Point(3, 183);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(235, 70);
-			this->button4->TabIndex = 3;
-			this->button4->Text = L"button4";
-			this->button4->UseVisualStyleBackColor = true;
-			// 
-			// button6
-			// 
-			this->button6->Location = System::Drawing::Point(3, 335);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(235, 70);
-			this->button6->TabIndex = 5;
-			this->button6->Text = L"button6";
-			this->button6->UseVisualStyleBackColor = true;
-			// 
-			// button5
-			// 
-			this->button5->Location = System::Drawing::Point(3, 259);
-			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(235, 70);
-			this->button5->TabIndex = 4;
-			this->button5->Text = L"button5";
-			this->button5->UseVisualStyleBackColor = true;
-			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -265,8 +268,7 @@ namespace CppCLRWinformsProjekt {
 #pragma endregion
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void flowLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	}
+
 
 	private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -279,5 +281,9 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }
