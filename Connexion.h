@@ -76,6 +76,8 @@ namespace Commande_Composants {
 			// 
 			// button1
 			// 
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button1->Location = System::Drawing::Point(97, 216);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(174, 75);
@@ -85,6 +87,8 @@ namespace Commande_Composants {
 			// 
 			// button2
 			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
 			this->button2->Location = System::Drawing::Point(353, 216);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(174, 75);
@@ -109,9 +113,11 @@ namespace Commande_Composants {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(94, 116);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(94, 133);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(94, 17);
+			this->label1->Size = System::Drawing::Size(124, 20);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Mot de Passe";
 			this->label1->Click += gcnew System::EventHandler(this, &Connexion::label1_Click);
@@ -119,9 +125,11 @@ namespace Commande_Composants {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(94, 20);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(94, 51);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(69, 17);
+			this->label2->Size = System::Drawing::Size(92, 20);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"Identifiant";
 			this->label2->Click += gcnew System::EventHandler(this, &Connexion::label2_Click);
