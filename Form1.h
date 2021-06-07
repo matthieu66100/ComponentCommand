@@ -1,4 +1,7 @@
 #pragma once
+#include "Connexion.h"
+
+
 
 namespace CppCLRWinformsProjekt {
 
@@ -8,6 +11,7 @@ namespace CppCLRWinformsProjekt {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace Commande_Composants;
 
 	/// <summary>
 	/// Zusammenfassung für Form1
@@ -35,30 +39,32 @@ namespace CppCLRWinformsProjekt {
 			}
 		}
 	private: System::Windows::Forms::SplitContainer^ splitContainer1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private: System::Windows::Forms::Button^ button3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Button^ button6;
@@ -66,9 +72,12 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Button^ button8;
+
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::Button^ button8;
+
+
 
 
 
@@ -103,17 +112,17 @@ namespace CppCLRWinformsProjekt {
 		void InitializeComponent(void)
 		{
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
-			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
 			this->splitContainer1->Panel1->SuspendLayout();
 			this->splitContainer1->Panel2->SuspendLayout();
@@ -130,8 +139,8 @@ namespace CppCLRWinformsProjekt {
 			// 
 			this->splitContainer1->Panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->splitContainer1->Panel1->Controls->Add(this->button9);
 			this->splitContainer1->Panel1->Controls->Add(this->button8);
+			this->splitContainer1->Panel1->Controls->Add(this->button9);
 			this->splitContainer1->Panel1->Controls->Add(this->button6);
 			this->splitContainer1->Panel1->Controls->Add(this->button5);
 			this->splitContainer1->Panel1->Controls->Add(this->button4);
@@ -145,14 +154,33 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer1->Panel2->Controls->Add(this->panel1);
 			this->splitContainer1->Panel2->Controls->Add(this->label1);
 			this->splitContainer1->Panel2->Controls->Add(this->button7);
+			this->splitContainer1->Panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::splitContainer1_Panel2_Paint);
 			this->splitContainer1->Size = System::Drawing::Size(1359, 609);
 			this->splitContainer1->SplitterDistance = 240;
 			this->splitContainer1->TabIndex = 0;
+			// 
+			// button8
+			// 
+			this->button8->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->button8->FlatAppearance->BorderSize = 0;
+			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button8->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->button8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->button8->Location = System::Drawing::Point(0, 536);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(241, 70);
+			this->button8->TabIndex = 7;
+			this->button8->Text = L"Paramètres";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &Form1::button9_Click);
 			// 
 			// button9
 			// 
 			this->button9->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->button9->FlatAppearance->BorderSize = 0;
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button9->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
@@ -161,25 +189,15 @@ namespace CppCLRWinformsProjekt {
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(241, 70);
 			this->button9->TabIndex = 7;
+			this->button9->Text = L"Bouton";
 			this->button9->UseVisualStyleBackColor = true;
-			// 
-			// button8
-			// 
-			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button8->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
-				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button8->Location = System::Drawing::Point(122, 536);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(115, 70);
-			this->button8->TabIndex = 6;
-			this->button8->Text = L"Options";
-			this->button8->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &Form1::button9_Click);
 			// 
 			// button6
 			// 
 			this->button6->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->button6->FlatAppearance->BorderSize = 0;
 			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button6->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
@@ -196,6 +214,7 @@ namespace CppCLRWinformsProjekt {
 			// 
 			this->button5->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->button5->FlatAppearance->BorderSize = 0;
 			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button5->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
@@ -206,11 +225,13 @@ namespace CppCLRWinformsProjekt {
 			this->button5->TabIndex = 4;
 			this->button5->Text = L"Magasin";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &Form1::button5_Click);
 			// 
 			// button4
 			// 
 			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->button4->FlatAppearance->BorderSize = 0;
 			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button4->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
@@ -221,11 +242,13 @@ namespace CppCLRWinformsProjekt {
 			this->button4->TabIndex = 3;
 			this->button4->Text = L"Gestionaire";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Form1::button4_Click_2);
 			// 
 			// button3
 			// 
 			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->button3->FlatAppearance->BorderSize = 0;
 			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
@@ -236,6 +259,7 @@ namespace CppCLRWinformsProjekt {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Technicien";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
 			// 
 			// button2
 			// 
@@ -265,34 +289,42 @@ namespace CppCLRWinformsProjekt {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(17, 30);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(91, 17);
-			this->label1->TabIndex = 2;
-			this->label1->Text = L"Info Defilante";
-			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
-			// 
-			// button7
-			// 
-			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button7->Location = System::Drawing::Point(966, 12);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(137, 56);
-			this->button7->TabIndex = 1;
-			this->button7->Text = L"Exit";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
-			// 
 			// panel1
 			// 
 			this->panel1->Location = System::Drawing::Point(3, 86);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1109, 520);
 			this->panel1->TabIndex = 3;
+			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::Silver;
+			this->label1->Location = System::Drawing::Point(17, 30);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(348, 38);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"Commandes Composants";
+			this->label1->Click += gcnew System::EventHandler(this, &Form1::label1_Click);
+			// 
+			// button7
+			// 
+			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(126)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->button7->Location = System::Drawing::Point(1042, 8);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(61, 61);
+			this->button7->TabIndex = 1;
+			this->button7->Text = L"X";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
 			// 
 			// Form1
 			// 
@@ -329,21 +361,40 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 }
 private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
-
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	Connexion().ShowDialog();
+	//this->panel1_Paint() = Controls->Clear();
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void splitContainer1_Panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-
 	Application::Exit();
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-} // voir cahier des charges "ingenieur composants"
+	button6->BackColor = Color::FromArgb(46, 51, 73);
+} 
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {	
+	button3->BackColor = Color::FromArgb(46, 51, 73);
+}
+private: System::Void button4_Click_2(System::Object^ sender, System::EventArgs^ e) {
+	button4->BackColor = Color::FromArgb(46, 51, 73);
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	button5->BackColor = Color::FromArgb(46, 51, 73);
+
+}
+private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
+	button9->BackColor = Color::FromArgb(46, 51, 73);
+
+}
+private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void splitContainer1_Panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
 };
 }
+// voir cahier des charges "ingenieur composants"

@@ -41,6 +41,7 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ button7;
 
 	protected:
 
@@ -72,6 +73,7 @@ namespace Commande_Composants {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -134,11 +136,28 @@ namespace Commande_Composants {
 			this->label2->Text = L"Identifiant";
 			this->label2->Click += gcnew System::EventHandler(this, &Connexion::label2_Click);
 			// 
+			// button7
+			// 
+			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(126)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->button7->Location = System::Drawing::Point(553, 10);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(61, 61);
+			this->button7->TabIndex = 6;
+			this->button7->Text = L"X";
+			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &Connexion::button7_Click);
+			// 
 			// Connexion
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(626, 303);
+			this->Controls->Add(this->button7);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->textBox2);
@@ -158,6 +177,9 @@ namespace Commande_Composants {
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	Connexion::~Connexion();
 }
 };
 }
