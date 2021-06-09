@@ -97,6 +97,7 @@ namespace Commande_Composants {
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Connexion";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Connexion::button2_Click);
 			// 
 			// textBox1
 			// 
@@ -104,6 +105,7 @@ namespace Commande_Composants {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(430, 22);
 			this->textBox1->TabIndex = 2;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Connexion::textBox1_TextChanged_1);
 			// 
 			// textBox2
 			// 
@@ -111,6 +113,7 @@ namespace Commande_Composants {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(430, 22);
 			this->textBox2->TabIndex = 3;
+			this->textBox2->UseSystemPasswordChar = true;
 			// 
 			// label1
 			// 
@@ -180,6 +183,15 @@ private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	Connexion::~Connexion();
+}
+private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (textBox1->Text == "root") {
+		if (textBox2->Text == "admin") {
+			Connexion::~Connexion();
+		}
+	}
 }
 };
 }

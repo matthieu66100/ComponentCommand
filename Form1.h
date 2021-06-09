@@ -362,6 +362,7 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	//this->Controls->Clear(panel1_Paint)
 	Connexion().ShowDialog();
 	//this->panel1_Paint() = Controls->Clear();
 }
@@ -376,20 +377,43 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	button6->BackColor = Color::FromArgb(46, 51, 73);
-} 
+
+	button3->BackColor = Color::FromArgb(24, 30, 54);
+	button4->BackColor = Color::FromArgb(24, 30, 54);
+	button5->BackColor = Color::FromArgb(24, 30, 54);
+	button9->BackColor = Color::FromArgb(24, 30, 54);
+}
 private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {	
 	button3->BackColor = Color::FromArgb(46, 51, 73);
+	
+	button4->BackColor = Color::FromArgb(24, 30, 54);
+	button5->BackColor = Color::FromArgb(24, 30, 54);
+	button6->BackColor = Color::FromArgb(24, 30, 54);
+	button9->BackColor = Color::FromArgb(24, 30, 54);
 }
 private: System::Void button4_Click_2(System::Object^ sender, System::EventArgs^ e) {
 	button4->BackColor = Color::FromArgb(46, 51, 73);
+
+	button3->BackColor = Color::FromArgb(24, 30, 54);
+	button5->BackColor = Color::FromArgb(24, 30, 54);
+	button6->BackColor = Color::FromArgb(24, 30, 54);
+	button9->BackColor = Color::FromArgb(24, 30, 54);
 }
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
 	button5->BackColor = Color::FromArgb(46, 51, 73);
 
+	button3->BackColor = Color::FromArgb(24, 30, 54);
+	button4->BackColor = Color::FromArgb(24, 30, 54);
+	button6->BackColor = Color::FromArgb(24, 30, 54);
+	button9->BackColor = Color::FromArgb(24, 30, 54);
 }
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 	button9->BackColor = Color::FromArgb(46, 51, 73);
 
+	button3->BackColor = Color::FromArgb(24, 30, 54);
+	button4->BackColor = Color::FromArgb(24, 30, 54);
+	button5->BackColor = Color::FromArgb(24, 30, 54);
+	button6->BackColor = Color::FromArgb(24, 30, 54);
 }
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
