@@ -336,6 +336,7 @@ namespace CppCLRWinformsProjekt {
 			this->Controls->Add(this->splitContainer1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Form1";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Commandes Composants";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->splitContainer1->Panel1->ResumeLayout(false);
@@ -362,9 +363,11 @@ private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, Syst
 private: System::Void button4_Click_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	//this->Controls->Clear(panel1_Paint)
-	Connexion().ShowDialog();
-	//this->panel1_Paint() = Controls->Clear();
+	Connexion^ connexion = gcnew Connexion;
+	connexion -> ShowDialog();
+	button1->Text = connexion->GetData();
+	//ne fonctionne pas encore
+
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }

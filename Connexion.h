@@ -22,6 +22,14 @@ namespace Commande_Composants {
 			//TODO: ajoutez ici le code du constructeur
 			//
 		}
+		Connexion(String^data)
+		{
+			InitializeComponent();
+			
+			//
+			//TODO: ajoutez ici le code du constructeur
+			//
+		}
 
 	protected:
 		/// <summary>
@@ -106,6 +114,7 @@ namespace Commande_Composants {
 			this->textBox1->Size = System::Drawing::Size(430, 22);
 			this->textBox1->TabIndex = 2;
 			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Connexion::textBox1_TextChanged_1);
+			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Connexion::textBox1_KeyDown);
 			// 
 			// textBox2
 			// 
@@ -114,6 +123,7 @@ namespace Commande_Composants {
 			this->textBox2->Size = System::Drawing::Size(430, 22);
 			this->textBox2->TabIndex = 3;
 			this->textBox2->UseSystemPasswordChar = true;
+			this->textBox2->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Connexion::textBox2_KeyDown);
 			// 
 			// label1
 			// 
@@ -175,22 +185,41 @@ namespace Commande_Composants {
 
 		}
 #pragma endregion
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	}
+public: String^ GetData() {
+	return textBox1->Text;
+}
+
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	Connexion::~Connexion();
+	//Connexion::~Connexion();
+	Connexion::Close();
 }
 private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (textBox1->Text == "root") {
-		if (textBox2->Text == "admin") {
-			Connexion::~Connexion();
+		if (textBox2->Text == "root") {
+			Connexion::Close();
+
+
 		}
+	}
+}
+	   //admin enterkey
+private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)Keys::Enter) {
+		textBox2->Focus();
+	}
+}
+	   //password enterkey
+private: System::Void textBox2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)Keys::Enter) {
+		button2->PerformClick();
 	}
 }
 };
