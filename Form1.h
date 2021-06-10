@@ -63,6 +63,10 @@ namespace CppCLRWinformsProjekt {
 
 
 
+
+
+
+
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -94,12 +98,12 @@ namespace CppCLRWinformsProjekt {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->ID1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ID2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ID3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ID4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
 			this->splitContainer1->Panel1->SuspendLayout();
 			this->splitContainer1->Panel2->SuspendLayout();
@@ -293,6 +297,34 @@ namespace CppCLRWinformsProjekt {
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick_1);
 			// 
+			// ID1
+			// 
+			this->ID1->HeaderText = L"ID1";
+			this->ID1->MinimumWidth = 6;
+			this->ID1->Name = L"ID1";
+			this->ID1->Width = 125;
+			// 
+			// ID2
+			// 
+			this->ID2->HeaderText = L"ID2";
+			this->ID2->MinimumWidth = 6;
+			this->ID2->Name = L"ID2";
+			this->ID2->Width = 125;
+			// 
+			// ID3
+			// 
+			this->ID3->HeaderText = L"ID3";
+			this->ID3->MinimumWidth = 6;
+			this->ID3->Name = L"ID3";
+			this->ID3->Width = 125;
+			// 
+			// ID4
+			// 
+			this->ID4->HeaderText = L"ID4";
+			this->ID4->MinimumWidth = 6;
+			this->ID4->Name = L"ID4";
+			this->ID4->Width = 125;
+			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -321,34 +353,6 @@ namespace CppCLRWinformsProjekt {
 			this->button7->Text = L"X";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
-			// 
-			// ID1
-			// 
-			this->ID1->HeaderText = L"ID1";
-			this->ID1->MinimumWidth = 6;
-			this->ID1->Name = L"ID1";
-			this->ID1->Width = 125;
-			// 
-			// ID2
-			// 
-			this->ID2->HeaderText = L"ID2";
-			this->ID2->MinimumWidth = 6;
-			this->ID2->Name = L"ID2";
-			this->ID2->Width = 125;
-			// 
-			// ID3
-			// 
-			this->ID3->HeaderText = L"ID3";
-			this->ID3->MinimumWidth = 6;
-			this->ID3->Name = L"ID3";
-			this->ID3->Width = 125;
-			// 
-			// ID4
-			// 
-			this->ID4->HeaderText = L"ID4";
-			this->ID4->MinimumWidth = 6;
-			this->ID4->Name = L"ID4";
-			this->ID4->Width = 125;
 			// 
 			// Form1
 			// 
@@ -437,8 +441,6 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	button6->BackColor = Color::FromArgb(24, 30, 54);
 	button9->BackColor = Color::FromArgb(24, 30, 54);
 }
-
-
 	   //test importation des données 
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 	button9->BackColor = Color::FromArgb(46, 51, 73);
@@ -448,26 +450,8 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 	button5->BackColor = Color::FromArgb(24, 30, 54);
 	button6->BackColor = Color::FromArgb(24, 30, 54);
 
-	try
-	{
-		Console::WriteLine("trying to open file {0}...", "Texte.txt");
-		StreamReader^ din = File::OpenText("Commande.csv");
-
-		String^ str;
-		int count = 0;
-		while ((str = din->ReadLine()) != nullptr)
-		{
-			count++;
-			Console::WriteLine("line {0}: {1}", count, str);
-		}
-	}
-	catch (Exception^ e)
-	{
-		if (dynamic_cast<FileNotFoundException^>(e))
-			Console::WriteLine("file '{0}' not found", "Commande.csv");
-		else
-			Console::WriteLine("problem reading file '{0}'", "Commande.csv");
-	}
+	AffichageTab^ commande = gcnew AffichageTab;
+	commande->ShowDialog();
 }
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
@@ -478,6 +462,14 @@ private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, S
 
 
 }
+
+private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
+
+}
+private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+
+
 };
 }
 // voir cahier des charges "ingenieur composants"
