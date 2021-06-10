@@ -489,20 +489,42 @@ private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e)
 }
 private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
 	System::String^ path = gcnew System::String("Texte.txt");
+	//System::String^ path = gcnew System::String("Commande.csv");
 	array<String^>^ lines = File::ReadAllLines(path);
 
-	String^ dataSeparator = ";";
+	String^ delimiter = ";";
+	/*
+	Notes:
+	-Array est un tableau de Strings
+	-array[0] = entete de tableau a afficher
+	-array[1] = Premiere raw du tableau
+	
+
+	- Decouper les lignes par leur delimiter et les ranger dans le datagridview
+	*/
+
+
+
 	for (int i = 0; i < sizeof(lines); i++)
 	{
+
 		MessageBox::Show(lines[i]);
+
 
 
 		if (i == 0) {
 			//header
+		//	for (int i = 0; i <= delimiter; i++)
+			{
+
+			}
+		
 		}
 		else {
 			//core
 		}
+
+		//dataGridView1->DataSource = 
 
 	}
 
