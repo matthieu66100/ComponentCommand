@@ -1,15 +1,19 @@
 #pragma once
 #include "Connexion.h"
+#include "AffichageTab.h"
 
 
 
 namespace CppCLRWinformsProjekt {
 
 	using namespace System;
+	using namespace System::IO;
+	using namespace System::Text;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
+	using namespace System::Data::SqlClient;
 	using namespace System::Drawing;
 	using namespace Commande_Composants;
 
@@ -39,59 +43,27 @@ namespace CppCLRWinformsProjekt {
 			}
 		}
 	private: System::Windows::Forms::SplitContainer^ splitContainer1;
-	private: System::Windows::Forms::Button^ button3;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button6;
-	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Label^ label1;
-
-	private: System::Windows::Forms::Button^ button9;
-	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ button8;
-
-
-
-
+	private: System::Windows::Forms::Button^ button9;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID4;
 
 
 
 
 	private: System::ComponentModel::IContainer^ components;
-
-
-
-
-
-
-
 
 
 	protected:
@@ -121,12 +93,19 @@ namespace CppCLRWinformsProjekt {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->ID1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ID2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ID3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->ID4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
 			this->splitContainer1->Panel1->SuspendLayout();
 			this->splitContainer1->Panel2->SuspendLayout();
 			this->splitContainer1->SuspendLayout();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// splitContainer1
@@ -291,11 +270,28 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->dataGridView1);
 			this->panel1->Location = System::Drawing::Point(3, 86);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1109, 520);
 			this->panel1->TabIndex = 3;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint);
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
+				this->ID1, this->ID2,
+					this->ID3, this->ID4
+			});
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->dataGridView1->Location = System::Drawing::Point(0, 0);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(1109, 520);
+			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick_1);
 			// 
 			// label1
 			// 
@@ -326,6 +322,34 @@ namespace CppCLRWinformsProjekt {
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
 			// 
+			// ID1
+			// 
+			this->ID1->HeaderText = L"ID1";
+			this->ID1->MinimumWidth = 6;
+			this->ID1->Name = L"ID1";
+			this->ID1->Width = 125;
+			// 
+			// ID2
+			// 
+			this->ID2->HeaderText = L"ID2";
+			this->ID2->MinimumWidth = 6;
+			this->ID2->Name = L"ID2";
+			this->ID2->Width = 125;
+			// 
+			// ID3
+			// 
+			this->ID3->HeaderText = L"ID3";
+			this->ID3->MinimumWidth = 6;
+			this->ID3->Name = L"ID3";
+			this->ID3->Width = 125;
+			// 
+			// ID4
+			// 
+			this->ID4->HeaderText = L"ID4";
+			this->ID4->MinimumWidth = 6;
+			this->ID4->Name = L"ID4";
+			this->ID4->Width = 125;
+			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -344,14 +368,14 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer1->Panel2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
 			this->splitContainer1->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 	private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
-
-
 	private: System::Void richTextBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -366,8 +390,6 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	Connexion^ connexion = gcnew Connexion;
 	connexion -> ShowDialog();
 	button1->Text = connexion->GetData();
-	//ne fonctionne pas encore
-
 }
 private: System::Void pictureBox1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -393,6 +415,11 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	button5->BackColor = Color::FromArgb(24, 30, 54);
 	button6->BackColor = Color::FromArgb(24, 30, 54);
 	button9->BackColor = Color::FromArgb(24, 30, 54);
+	
+
+	//mise en place de la table si aucun profil n'est selectioné
+	//AffichageTab^ tab = gcnew AffichageTab{Dock = DockStyle.fill, TopLevel = false};
+	
 }
 private: System::Void button4_Click_2(System::Object^ sender, System::EventArgs^ e) {
 	button4->BackColor = Color::FromArgb(46, 51, 73);
@@ -410,6 +437,9 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	button6->BackColor = Color::FromArgb(24, 30, 54);
 	button9->BackColor = Color::FromArgb(24, 30, 54);
 }
+
+
+	   //test importation des données 
 private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
 	button9->BackColor = Color::FromArgb(46, 51, 73);
 
@@ -417,10 +447,36 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 	button4->BackColor = Color::FromArgb(24, 30, 54);
 	button5->BackColor = Color::FromArgb(24, 30, 54);
 	button6->BackColor = Color::FromArgb(24, 30, 54);
+
+	try
+	{
+		Console::WriteLine("trying to open file {0}...", "Texte.txt");
+		StreamReader^ din = File::OpenText("Commande.csv");
+
+		String^ str;
+		int count = 0;
+		while ((str = din->ReadLine()) != nullptr)
+		{
+			count++;
+			Console::WriteLine("line {0}: {1}", count, str);
+		}
+	}
+	catch (Exception^ e)
+	{
+		if (dynamic_cast<FileNotFoundException^>(e))
+			Console::WriteLine("file '{0}' not found", "Commande.csv");
+		else
+			Console::WriteLine("problem reading file '{0}'", "Commande.csv");
+	}
 }
 private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
 }
 private: System::Void splitContainer1_Panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+
+private: System::Void dataGridView1_CellContentClick_1(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+
 }
 };
 }
