@@ -491,7 +491,20 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 	System::String^ path = gcnew System::String("Texte.txt");
 	array<String^>^ lines = File::ReadAllLines(path);
 
-	MessageBox::Show(lines[1]);
+	String^ dataSeparator = ";";
+	for (int i = 0; i < sizeof(lines); i++)
+	{
+		MessageBox::Show(lines[i]);
+
+
+		if (i == 0) {
+			//header
+		}
+		else {
+			//core
+		}
+
+	}
 
 
 
