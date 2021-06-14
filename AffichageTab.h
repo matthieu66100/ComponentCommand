@@ -488,20 +488,14 @@ private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
-
-	/*
-	Notes:
-	-Array est un tableau de Strings
-	-array[0] = entete de tableau a afficher
-	-array[1] = Premiere raw du tableau
-	
-
-	- Decouper les lignes par leur delimiter et les ranger dans le datagridview
-	*/
-
-	System::String^ path = gcnew System::String("Texte.txt");
 	//System::String^ path = gcnew System::String("Commande.csv");
+	System::String^ path = gcnew System::String("Texte.txt");
 	array<String^>^ lines = File::ReadAllLines(path);
+	DataTable^ Dt = gcnew DataTable();
+	Dt->Clear();
+	Dt->Columns->Add("Column1");
+	Dt->Columns->Add("Column2");
+	Dt->Rows->Add();
 
 
 	for (int i = 0; i < lines->Length; i++)
@@ -509,9 +503,8 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 		String^ row = lines[i];
 		array<String^>^ result = row->Split(';');
 
-		MessageBox::Show(result[0]); //affichage d'une colonne complete
-		MessageBox::Show(lines[0]); //affichage d'une ligne complete
-
+		//MessageBox::Show(result[0]); //affichage d'une colonne complete
+		//MessageBox::Show(lines[0]); //affichage d'une ligne complete
 
 		if (i == 0) {
 			//header
