@@ -488,11 +488,7 @@ private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ 
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ path = gcnew System::String("Texte.txt");
-	//System::String^ path = gcnew System::String("Commande.csv");
-	array<String^>^ lines = File::ReadAllLines(path);
 
-	String^ delimiter = ";";
 	/*
 	Notes:
 	-Array est un tableau de Strings
@@ -503,13 +499,18 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 	- Decouper les lignes par leur delimiter et les ranger dans le datagridview
 	*/
 
+	System::String^ path = gcnew System::String("Texte.txt");
+	//System::String^ path = gcnew System::String("Commande.csv");
+	array<String^>^ lines = File::ReadAllLines(path);
 
 
-	for (int i = 0; i < sizeof(lines); i++)
+	for (int i = 0; i < lines->Length; i++)
 	{
+		String^ row = lines[i];
+		array<String^>^ result = row->Split(';');
 
-		MessageBox::Show(lines[i]);
-
+		MessageBox::Show(result[0]); //affichage d'une colonne complete
+		MessageBox::Show(lines[0]); //affichage d'une ligne complete
 
 
 		if (i == 0) {
@@ -527,9 +528,6 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 		//dataGridView1->DataSource = 
 
 	}
-
-
-
 }
 };
 }
