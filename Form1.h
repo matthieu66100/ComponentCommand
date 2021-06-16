@@ -50,7 +50,7 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::Button^ button7;
-	private: System::Windows::Forms::Button^ button8;
+
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -59,6 +59,10 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID3;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ ID4;
+
+
+
+
 
 
 
@@ -88,7 +92,6 @@ namespace CppCLRWinformsProjekt {
 		void InitializeComponent(void)
 		{
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
-			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
@@ -98,12 +101,12 @@ namespace CppCLRWinformsProjekt {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->ID1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ID2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ID3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->ID4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
 			this->splitContainer1->Panel1->SuspendLayout();
 			this->splitContainer1->Panel2->SuspendLayout();
@@ -122,7 +125,6 @@ namespace CppCLRWinformsProjekt {
 			// 
 			this->splitContainer1->Panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->splitContainer1->Panel1->Controls->Add(this->button8);
 			this->splitContainer1->Panel1->Controls->Add(this->button9);
 			this->splitContainer1->Panel1->Controls->Add(this->button6);
 			this->splitContainer1->Panel1->Controls->Add(this->button5);
@@ -142,23 +144,6 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer1->SplitterDistance = 240;
 			this->splitContainer1->TabIndex = 0;
 			// 
-			// button8
-			// 
-			this->button8->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->button8->FlatAppearance->BorderSize = 0;
-			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button8->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
-				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button8->Location = System::Drawing::Point(0, 536);
-			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(241, 70);
-			this->button8->TabIndex = 7;
-			this->button8->Text = L"Paramètres";
-			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &Form1::button9_Click);
-			// 
 			// button9
 			// 
 			this->button9->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
@@ -172,12 +157,14 @@ namespace CppCLRWinformsProjekt {
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(241, 70);
 			this->button9->TabIndex = 7;
-			this->button9->Text = L"Bouton";
+			this->button9->Text = L"Passer Commande";
 			this->button9->UseVisualStyleBackColor = true;
 			this->button9->Click += gcnew System::EventHandler(this, &Form1::button9_Click);
 			// 
 			// button6
 			// 
+			this->button6->Cursor = System::Windows::Forms::Cursors::No;
+			this->button6->Enabled = false;
 			this->button6->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->button6->FlatAppearance->BorderSize = 0;
@@ -195,6 +182,8 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// button5
 			// 
+			this->button5->Cursor = System::Windows::Forms::Cursors::No;
+			this->button5->Enabled = false;
 			this->button5->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->button5->FlatAppearance->BorderSize = 0;
@@ -212,6 +201,8 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// button4
 			// 
+			this->button4->Cursor = System::Windows::Forms::Cursors::No;
+			this->button4->Enabled = false;
 			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->button4->FlatAppearance->BorderSize = 0;
@@ -229,6 +220,8 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// button3
 			// 
+			this->button3->Cursor = System::Windows::Forms::Cursors::No;
+			this->button3->Enabled = false;
 			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->button3->FlatAppearance->BorderSize = 0;
@@ -246,6 +239,7 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// button2
 			// 
+			this->button2->Enabled = false;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
@@ -297,34 +291,6 @@ namespace CppCLRWinformsProjekt {
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick_1);
 			// 
-			// ID1
-			// 
-			this->ID1->HeaderText = L"ID1";
-			this->ID1->MinimumWidth = 6;
-			this->ID1->Name = L"ID1";
-			this->ID1->Width = 125;
-			// 
-			// ID2
-			// 
-			this->ID2->HeaderText = L"ID2";
-			this->ID2->MinimumWidth = 6;
-			this->ID2->Name = L"ID2";
-			this->ID2->Width = 125;
-			// 
-			// ID3
-			// 
-			this->ID3->HeaderText = L"ID3";
-			this->ID3->MinimumWidth = 6;
-			this->ID3->Name = L"ID3";
-			this->ID3->Width = 125;
-			// 
-			// ID4
-			// 
-			this->ID4->HeaderText = L"ID4";
-			this->ID4->MinimumWidth = 6;
-			this->ID4->Name = L"ID4";
-			this->ID4->Width = 125;
-			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
@@ -353,6 +319,34 @@ namespace CppCLRWinformsProjekt {
 			this->button7->Text = L"X";
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &Form1::button7_Click);
+			// 
+			// ID1
+			// 
+			this->ID1->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->ID1->HeaderText = L"ID1";
+			this->ID1->MinimumWidth = 6;
+			this->ID1->Name = L"ID1";
+			// 
+			// ID2
+			// 
+			this->ID2->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->ID2->HeaderText = L"ID2";
+			this->ID2->MinimumWidth = 6;
+			this->ID2->Name = L"ID2";
+			// 
+			// ID3
+			// 
+			this->ID3->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->ID3->HeaderText = L"ID3";
+			this->ID3->MinimumWidth = 6;
+			this->ID3->Name = L"ID3";
+			// 
+			// ID4
+			// 
+			this->ID4->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->ID4->HeaderText = L"ID4";
+			this->ID4->MinimumWidth = 6;
+			this->ID4->Name = L"ID4";
 			// 
 			// Form1
 			// 

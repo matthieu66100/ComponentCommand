@@ -491,34 +491,36 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 	//System::String^ path = gcnew System::String("Commande.csv");
 	System::String^ path = gcnew System::String("Texte.txt");
 	array<String^>^ lines = File::ReadAllLines(path);
-	DataTable^ Dt = gcnew DataTable();
-	Dt->Clear();
-	Dt->Columns->Add("Column1");
-	Dt->Columns->Add("Column2");
-	Dt->Rows->Add();
 
 
-	for (int i = 0; i < lines->Length; i++)
+
+	//############################ Partie de test
+	//dataGridView2->ColumnCount = 5;
+
+	//dataGridView2->Columns[0]->Name = "Release Date";
+	//dataGridView2->Rows->Add(result[0]);
+
+
+
+	//MessageBox::Show(result[0]); //affichage d'une colonne complete
+	//MessageBox::Show(lines[0]); //affichage d'une ligne complete
+
+	//#############################
+		array<String^>^ colTitle = lines[0]->Split(';');
+
+		//permet d'enregistrer les titres des colonnes
+		for (int j = 0; j < colTitle->Length; j++)
+		{
+		dataGridView2->ColumnCount = colTitle->Length;
+		dataGridView2->Columns[j]->Name = colTitle[j];
+
+		}
+
+
+
+	for (int i = 0; i < lines->Length+1; i++)
 	{
-		String^ row = lines[i];
-		array<String^>^ result = row->Split(';');
-
-		//MessageBox::Show(result[0]); //affichage d'une colonne complete
-		//MessageBox::Show(lines[0]); //affichage d'une ligne complete
-
-		if (i == 0) {
-			//header
-		//	for (int i = 0; i <= delimiter; i++)
-			{
-
-			}
-		
-		}
-		else {
-			//core
-		}
-
-		//dataGridView1->DataSource = 
+//		array<String^>^ result = lines[i]->Split(';');
 
 	}
 }
