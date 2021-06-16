@@ -382,7 +382,7 @@ namespace Commande_Composants {
 			this->ClientSize = System::Drawing::Size(1122, 577);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
 			this->Name = L"AffichageTab";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -506,23 +506,26 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 	//MessageBox::Show(lines[0]); //affichage d'une ligne complete
 
 	//#############################
-		array<String^>^ colTitle = lines[0]->Split(';');
+
+		//ne recupere que la premiere ligne du document et la decoupe
+	array<String^>^ colTitle = lines[0]->Split(';');
+
 
 		//permet d'enregistrer les titres des colonnes
-		for (int j = 0; j < colTitle->Length; j++)
-		{
+	for (int j = 0; j < colTitle->Length; j++)
+	{
 		dataGridView2->ColumnCount = colTitle->Length;
 		dataGridView2->Columns[j]->Name = colTitle[j];
-
-		}
-
-
-
-	for (int i = 0; i < lines->Length+1; i++)
-	{
-//		array<String^>^ result = lines[i]->Split(';');
-
 	}
+
+	for (int i = 1; i < lines->Length; i++)
+	{
+	array<String^>^ rowData = lines[i]->Split(';');
+	dataGridView2->Rows->Add(rowData);
+	}
+	
+
+
 }
 };
 }
