@@ -513,15 +513,15 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 	System::String^ path = gcnew System::String("Texte.txt");
 	array<String^>^ lines = File::ReadAllLines(path);
 
-	String^ demandeur	= textBox1->Text;
-	String^ pnCarte		= textBox2->Text;
-	String^ numSerie	= textBox3->Text;
-	String^ pnComp		= textBox4->Text;
-	String^ qte			= textBox5->Text;
-	String^ imputation	= textBox6->Text;
-	String^ fournisseur = textBox7->Text;
-	String^ status		= textBox8->Text;
-	String^ dateLiv		= textBox9->Text;
+	String^ demandeur	= textBox1 ->Text;
+	String^ pnCarte		= textBox2 ->Text;
+	String^ numSerie	= textBox3 ->Text;
+	String^ pnComp		= textBox4 ->Text;
+	String^ qte			= textBox5 ->Text;
+	String^ imputation	= textBox6 ->Text;
+	String^ fournisseur = textBox7 ->Text;
+	String^ status		= textBox8 ->Text;
+	String^ dateLiv		= textBox9 ->Text;
 	String^ commentaire = textBox10->Text;
 
 	array<String^>^ valors = gcnew array<String^> { //N°Commande
@@ -574,23 +574,22 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 													";" 
 													};
 
+//	MessageBox::Show(lines[0]);
 
-
-	MessageBox::Show(valors[0]);
-
-	textBox1->Clear();
-	textBox2->Clear();
-	textBox3->Clear();
-	textBox4->Clear();
-	textBox5->Clear();
-	textBox6->Clear();
-	textBox7->Clear();
-	textBox8->Clear();
-	textBox9->Clear();
+	textBox1 ->Clear();
+	textBox2 ->Clear();
+	textBox3 ->Clear();
+	textBox4 ->Clear();
+	textBox5 ->Clear();
+	textBox6 ->Clear();
+	textBox7 ->Clear();
+	textBox8 ->Clear();
+	textBox9 ->Clear();
 	textBox10->Clear();
 
 
-		File::WriteAllText("Texte.txt",valors[0]);
+		File::AppendAllLines("Texte.txt",valors);
+		btnRefresh_Click(sender,  e);
 }
 	   
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {

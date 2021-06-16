@@ -1,3 +1,4 @@
 N°Commande;Date_Cde;Demandeur_Nom;Code_BDDP_Carte;N°Serie_Carte;Repere_Topo_Carte;Code_BDDP_Composant;Code_SAP_Composant;Qté;Imputation;Besoin_Ou_Stock;Date_Besoin;Com_Technicien;Com_Technicien_Post_Validation;EMS;Delai_Livraison;Statut;Com_Gestion;Accord_Fournisseur;Date_Livraison;Com_Fournisseur;FlagTech;FlagGest;FlagAskModif
 2014/0001;13-mai-14;FAURE;E36167XX;;Q7404;A2014187;7607852;2;;Besoin;20-mai-14;;;SANMINA;départ Sanmina 26/05/2014;Réception faite;OK Sanmina;FAUX;;;FAUX;FAUX;FAUX
 2014/0002;13-mai-14;AUBIER;E17894XX;;R155;A1240389;3121998;10;4428629;Besoin;14-mai-14;;;TRONICO;23/05/2014;Réception faite;OK Tronico;FAUX;;;FAUX;FAUX;FAUX
+
