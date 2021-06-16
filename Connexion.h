@@ -54,12 +54,6 @@ namespace Commande_Composants {
 	protected:
 
 
-
-
-
-
-
-
 	protected:
 
 	private:
@@ -205,8 +199,6 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	if (textBox1->Text == "root") {
 		if (textBox2->Text == "root") {
 			Connexion::Close();
-
-
 		}
 	}
 }

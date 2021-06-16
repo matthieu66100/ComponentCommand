@@ -39,17 +39,10 @@ namespace Commande_Composants {
 			}
 		}
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-			 System::Windows::Forms::BindingSource^ bindingSource1;
-
-
-
-
-
-
+	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Button^ btnClose;
-
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
 	private: System::Windows::Forms::Label^ label7;
 	private: System::Windows::Forms::Label^ label6;
@@ -73,6 +66,7 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Button^ btnRefresh;
 	private: System::Windows::Forms::Button^ btnAdd;
+
 
 
 	private: System::ComponentModel::IContainer^ components;
@@ -157,17 +151,18 @@ namespace Commande_Composants {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(302, 577);
+			this->panel1->Size = System::Drawing::Size(302, 666);
 			this->panel1->TabIndex = 1;
 			// 
 			// btnAdd
 			// 
-			this->btnAdd->Location = System::Drawing::Point(211, 521);
+			this->btnAdd->Location = System::Drawing::Point(211, 601);
 			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(85, 53);
 			this->btnAdd->TabIndex = 24;
 			this->btnAdd->Text = L"ADD";
 			this->btnAdd->UseVisualStyleBackColor = true;
+			this->btnAdd->Click += gcnew System::EventHandler(this, &AffichageTab::btnAdd_Click);
 			// 
 			// btnRefresh
 			// 
@@ -181,14 +176,14 @@ namespace Commande_Composants {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(6, 484);
+			this->textBox10->Location = System::Drawing::Point(6, 541);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(181, 22);
 			this->textBox10->TabIndex = 22;
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(6, 541);
+			this->textBox9->Location = System::Drawing::Point(6, 484);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(181, 22);
 			this->textBox9->TabIndex = 21;
@@ -248,6 +243,7 @@ namespace Commande_Composants {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(181, 22);
 			this->textBox1->TabIndex = 13;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &AffichageTab::textBox1_TextChanged);
 			// 
 			// label10
 			// 
@@ -362,7 +358,7 @@ namespace Commande_Composants {
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel2->Location = System::Drawing::Point(302, 0);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(820, 577);
+			this->panel2->Size = System::Drawing::Size(925, 666);
 			this->panel2->TabIndex = 2;
 			// 
 			// dataGridView2
@@ -373,16 +369,16 @@ namespace Commande_Composants {
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(820, 577);
+			this->dataGridView2->Size = System::Drawing::Size(925, 666);
 			this->dataGridView2->TabIndex = 0;
 			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AffichageTab::dataGridView2_CellContentClick);
 			// 
 			// AffichageTab
 			// 
-			this->ClientSize = System::Drawing::Size(1122, 577);
+			this->ClientSize = System::Drawing::Size(1227, 666);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::SizableToolWindow;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"AffichageTab";
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
@@ -414,7 +410,6 @@ namespace Commande_Composants {
 						System::Threading::Monitor::Exit(m_SyncObject);
 					}
 				}
-
 				return m_DefaultInstance;
 			}
 		}
@@ -483,49 +478,122 @@ namespace Commande_Composants {
 			
 		}
 private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
-	AffichageTab::Close();
+	//AffichageTab::Close(); //a remplacer
+	Application::Exit();
 }
 private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
-	//System::String^ path = gcnew System::String("Commande.csv");
+	//System::String^ path = gcnew System::String("Commande.csv"); //a tester 
 	System::String^ path = gcnew System::String("Texte.txt");
 	array<String^>^ lines = File::ReadAllLines(path);
-
-
-
-	//############################ Partie de test
-	//dataGridView2->ColumnCount = 5;
-
-	//dataGridView2->Columns[0]->Name = "Release Date";
-	//dataGridView2->Rows->Add(result[0]);
-
-
-
-	//MessageBox::Show(result[0]); //affichage d'une colonne complete
-	//MessageBox::Show(lines[0]); //affichage d'une ligne complete
-
-	//#############################
+	dataGridView2->ClearSelection();
+	
 
 		//ne recupere que la premiere ligne du document et la decoupe
 	array<String^>^ colTitle = lines[0]->Split(';');
 
 
-		//permet d'enregistrer les titres des colonnes
+		//permet d'afficher les titres des colonnes
 	for (int j = 0; j < colTitle->Length; j++)
 	{
 		dataGridView2->ColumnCount = colTitle->Length;
 		dataGridView2->Columns[j]->Name = colTitle[j];
 	}
-
+		//permet d'afficher les contenus des lignes
 	for (int i = 1; i < lines->Length; i++)
 	{
-	array<String^>^ rowData = lines[i]->Split(';');
-	dataGridView2->Rows->Add(rowData);
+		array<String^>^ rowData = lines[i]->Split(';');
+		dataGridView2->Rows->Add(rowData);
 	}
+}
+private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 	
+	//MessageBox::Show(informations[1]);
+	System::String^ path = gcnew System::String("Texte.txt");
+	array<String^>^ lines = File::ReadAllLines(path);
+
+	String^ demandeur	= textBox1->Text;
+	String^ pnCarte		= textBox2->Text;
+	String^ numSerie	= textBox3->Text;
+	String^ pnComp		= textBox4->Text;
+	String^ qte			= textBox5->Text;
+	String^ imputation	= textBox6->Text;
+	String^ fournisseur = textBox7->Text;
+	String^ status		= textBox8->Text;
+	String^ dateLiv		= textBox9->Text;
+	String^ commentaire = textBox10->Text;
+
+	array<String^>^ valors = gcnew array<String^> { //N°Commande
+													";" +
+													//Date_Cde
+													";" + 
+													demandeur + 
+													";" + 
+													//Code_BDDP_Carte
+													";" + 
+													pnCarte +
+													";" + 
+													//Repere_Topo_Carte
+													";" + 
+													pnComp +//Code_BDDP_Composant
+													";" + 
+													 //code sap comp
+													";" + 
+													qte +
+													";" + 
+													imputation+
+													";" +
+													//Besoin_Ou_Stock
+													";" + 
+													//Date_Besoin
+													";" +
+													//Com_Technicien
+													";"+
+													//Com_Technicien_Post_Validation
+													";" +
+													//EMS
+													";" +
+													//Delai_Livraison
+													";" +
+													status +
+													";" +
+													commentaire+
+													";" +
+													//Accord_Fournisseur
+													";" +
+													dateLiv+
+													";" +
+													fournisseur+ 
+													";" +
+													//FlagTech
+													";" +
+													//FlagGest
+													";" +
+													//FlagAskModif
+													";" 
+													};
 
 
+
+	MessageBox::Show(valors[0]);
+
+	textBox1->Clear();
+	textBox2->Clear();
+	textBox3->Clear();
+	textBox4->Clear();
+	textBox5->Clear();
+	textBox6->Clear();
+	textBox7->Clear();
+	textBox8->Clear();
+	textBox9->Clear();
+	textBox10->Clear();
+
+
+		File::WriteAllText("Texte.txt",valors[0]);
+}
+	   
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
