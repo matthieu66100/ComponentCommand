@@ -231,6 +231,7 @@ namespace Commande_Composants {
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(181, 22);
 			this->textBox8->TabIndex = 20;
+			this->textBox8->TextChanged += gcnew System::EventHandler(this, &AffichageTab::textBox8_TextChanged);
 			// 
 			// textBox7
 			// 
@@ -426,7 +427,6 @@ namespace Commande_Composants {
 			// 
 			this->dataGridView2->AllowUserToAddRows = false;
 			this->dataGridView2->AllowUserToDeleteRows = false;
-			this->dataGridView2->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataGridView2->Location = System::Drawing::Point(0, 0);
@@ -584,7 +584,13 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 	String^ pnComp		= textBox4 ->Text;
 	String^ qte			= textBox5 ->Text;
 	String^ imputation	= textBox6 ->Text;
-	String^ fournisseur = textBox7 ->Text;
+		String^ fournisseur = textBox7 ->Text;
+	/*if (textBox7 == "") {
+		textBox7->Text = "En cours de traitement"
+	}
+	else {
+
+	}*/
 	String^ status		= textBox8 ->Text;
 	String^ dateLiv		= textBox9 ->Text;
 	String^ commentaire = textBox10->Text;
@@ -659,6 +665,8 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 }
 private: System::Void btnClose_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	AffichageTab::Close(); 
+}
+private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

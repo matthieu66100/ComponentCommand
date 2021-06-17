@@ -1,4 +1,4 @@
-N°Commande;Date_Cde;Demandeur_Nom;Code_BDDP_Carte;N°Serie_Carte;Repere_Topo_Carte;Code_BDDP_Composant;Code_SAP_Composant;Qté;Imputation;Besoin_Ou_Stock;Date_Besoin;Com_Technicien;Com_Technicien_Post_Validation;EMS;Delai_Livraison;Statut;Com_Gestion;Accord_Fournisseur;Date_Livraison;Com_Fournisseur;FlagTech;FlagGest;FlagAskModif
+N°Commande;Date_Cde;Demandeur_Nom;Pn_Carte_Reparee;N°Serie_Carte;Repere_Topo_Carte;Pn_Composant;Code_SAP_Composant;Qté;Imputation;Besoin_Ou_Stock;Date_Besoin;Com_Technicien;Com_Technicien_Post_Validation;Fournisseur;Date Sup. de reception;Statut;Com_Gestion;Accord_Fournisseur;Date_Reception;Com_Fournisseur;FlagTech;FlagGest;FlagAskModif
 2021/0060;24-mars-21;COUTADEUR;E17888AA;1636;U40;A1256951;A1256951;20;;Besoin;31-mars-21;Reparation fct PFC;;COFIDUR;ok Cof 12/4*;Commande en cours fournisseur;En FAI;FAUX;;;FAUX;VRAI;FAUX
 2021/0061;24-mars-21;KAHLAOUI;E17988DA;21130;R130;A1251825;…;5;;Besoin;31-mars-21;;;TRONICO;ok Tro 02/04*;Réception faite;;FAUX;;;FAUX;FAUX;FAUX
 2021/0062;24-mars-21;CLIQUET;E36067BA01;9018;Q5802;A2005709;7524557;20;;Besoin;31-mars-21;Composant en attente pour 1 carte à Chatelrault;;SANMINA;ok San 14/04*;Réception faite;;FAUX;;;FAUX;FAUX;FAUX
@@ -7,3 +7,6 @@ N°Commande;Date_Cde;Demandeur_Nom;Code_BDDP_Carte;N°Serie_Carte;Repere_Topo_Cart
 2021/0065;31-mars-21;PEDRAZA;F1287258;11692;C8;A1253001;A1253001;2;;Besoin;07-avr-21;besoin pour rework prod;;TRONICO;ok Tro 23/04*;Réception faite;Réception 22/04;FAUX;;;FAUX;FAUX;FAUX
 2021/0066;31-mars-21;PEDRAZA;F1287258;11692;C7;A1253002;A1253002;2;;Besoin;07-avr-21;besoin pour rework prod;;MAGASIN;dispo en 2020;Réception faite;;FAUX;;;FAUX;FAUX;FAUX
 2021/0067;01-avr-21;CLIQUET;U431BAM01;173445;C28;A1171534;A1171534;20;;Besoin;08-avr-21;;;SELHA;ok Sel 09/4*;Réception faite;Réception 12/04;FAUX;;;FAUX;FAUX;FAUX;;test;;khb;;hb;;khb;k;;;;;;;jk;kjn;;jn;bk;;;;
+;;gv;;gv;;hg;;hgv;hgv;;;;;;;hgv;vhgv;;hg;hgv;;;;
+;;;;;;;;;;;;;;;;;qscqsfd;;;;;;;
+;;;;;;;;;;;;;;;;;;;;123;;;;

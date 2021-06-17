@@ -1,6 +1,7 @@
 #pragma once
 #include "Connexion.h"
 #include "AffichageTab.h"
+#include "Tableau.h"
 
 
 
@@ -373,6 +374,14 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	
 	//mise en place de la table si aucun profil n'est selectioné
 	//AffichageTab^ tab = gcnew AffichageTab{Dock = DockStyle.fill, TopLevel = false};
+
+	Tableau^ tab = gcnew Tableau;
+	tab;
+	tab->TopLevel = false;
+	tab->TopMost = true;
+	panel1->Controls->Clear();
+	panel1->Controls->Add(tab);
+	tab->Show();
 	
 }
 private: System::Void button4_Click_2(System::Object^ sender, System::EventArgs^ e) {

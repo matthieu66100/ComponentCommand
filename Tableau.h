@@ -86,31 +86,32 @@ namespace Commande_Composants {
 		}
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		//System::String^ path = gcnew System::String("Commande.csv"); //a tester 
-		System::String^ path = gcnew System::String("Texte.txt");
-		array<String^>^ lines = File::ReadAllLines(path);
-		//dataGridView2->ClearSelection();
-		dataGridView1->Rows->Clear();
-
-		dataGridView1->Refresh();
-
-
-		//ne recupere que la premiere ligne du document et la decoupe
-		array<String^>^ colTitle = lines[0]->Split(';');
-
-
-		//permet d'afficher les titres des colonnes
-		for (int j = 0; j < colTitle->Length; j++)
-		{
-			dataGridView1->ColumnCount = colTitle->Length;
-			dataGridView1->Columns[j]->Name = colTitle[j];
-		}
-		//permet d'afficher les contenus des lignes
-		for (int i = 1; i < lines->Length; i++)
-		{
-			array<String^>^ rowData = lines[i]->Split(';');
-			dataGridView1->Rows->Add(rowData);
-		}
+		
 	}
+
+	public:System::Void fctMaj() {
+			System::String^ path = gcnew System::String("Texte.txt");
+			array<String^>^ lines = File::ReadAllLines(path);
+			dataGridView1->Rows->Clear();
+
+
+			//ne recupere que la premiere ligne du document et la decoupe
+			array<String^>^ colTitle = lines[0]->Split(';');
+
+
+			//permet d'afficher les titres des colonnes
+			for (int j = 0; j < colTitle->Length; j++)
+			{
+				dataGridView1->ColumnCount = colTitle->Length;
+				dataGridView1->Columns[j]->Name = colTitle[j];
+			}
+			//permet d'afficher les contenus des lignes
+			for (int i = 1; i < lines->Length; i++)
+			{
+				array<String^>^ rowData = lines[i]->Split(';');
+				dataGridView1->Rows->Add(rowData);
+			}
+			dataGridView1->Refresh();
+		}
 	};
 }
