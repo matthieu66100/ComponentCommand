@@ -30,6 +30,33 @@ namespace CppCLRWinformsProjekt {
 			//
 			//TODO: Konstruktorcode hier hinzufügen.
 			//
+
+			// Initialisation du Tableau au lancement de l'application
+			System::String^ path = gcnew System::String("Texte.txt");
+			array<String^>^ lines = File::ReadAllLines(path);
+			dataGridView1->Rows->Clear();
+
+			dataGridView1->Refresh();
+
+
+			//ne recupere que la premiere ligne du document et la decoupe
+			array<String^>^ colTitle = lines[0]->Split(';');
+
+
+			//permet d'afficher les titres des colonnes
+			for (int j = 0; j < colTitle->Length; j++)
+			{
+				dataGridView1->ColumnCount = colTitle->Length;
+				dataGridView1->Columns[j]->Name = colTitle[j];
+			}
+			//permet d'afficher les contenus des lignes
+			for (int i = 1; i < lines->Length; i++)
+			{
+				array<String^>^ rowData = lines[i]->Split(';');
+				dataGridView1->Rows->Add(rowData);
+			}
+
+
 		}
 
 	protected:
@@ -57,19 +84,7 @@ namespace CppCLRWinformsProjekt {
 
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::SplitContainer^ splitContainer2;
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
 
@@ -105,6 +120,7 @@ namespace CppCLRWinformsProjekt {
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->btnShop = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
 			this->splitContainer1->Panel1->SuspendLayout();
 			this->splitContainer1->Panel2->SuspendLayout();
@@ -113,6 +129,8 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer2->Panel1->SuspendLayout();
 			this->splitContainer2->Panel2->SuspendLayout();
 			this->splitContainer2->SuspendLayout();
+			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// splitContainer1
@@ -291,12 +309,24 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->dataGridView1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1584, 851);
 			this->panel1->TabIndex = 3;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint);
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->dataGridView1->Location = System::Drawing::Point(0, 0);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(1584, 851);
+			this->dataGridView1->TabIndex = 0;
 			// 
 			// Form1
 			// 
@@ -320,6 +350,8 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer2->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer2))->EndInit();
 			this->splitContainer2->ResumeLayout(false);
+			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}

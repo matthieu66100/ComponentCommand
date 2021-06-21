@@ -9,7 +9,6 @@ namespace Commande_Composants {
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
-	using namespace System::Data::SqlClient;
 	using namespace System::Drawing;
 
 	/// <summary>
@@ -21,10 +20,30 @@ namespace Commande_Composants {
 		AffichageTab(void)
 		{
 			InitializeComponent();
-
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			System::String^ path = gcnew System::String("Texte.txt");
+			array<String^>^ lines = File::ReadAllLines(path);
+			dataGridView2->Rows->Clear();
+
+			//ne recupere que la premiere ligne du document et la decoupe
+			array<String^>^ colTitle = lines[0]->Split(';');
+
+			//permet d'afficher les titres des colonnes
+			for (int j = 0; j < colTitle->Length; j++)
+			{
+				dataGridView2->ColumnCount = colTitle->Length;
+				dataGridView2->Columns[j]->Name = colTitle[j];
+			}
+			//permet d'afficher les contenus des lignes
+			for (int i = 1; i < lines->Length; i++)
+			{
+				array<String^>^ rowData = lines[i]->Split(';');
+				dataGridView2->Rows->Add(rowData);
+			}
+			dataGridView2->Refresh();
+
 		}
 
 	protected:
@@ -67,9 +86,6 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Button^ btnRefresh;
 	private: System::Windows::Forms::Button^ btnAdd;
 	private: System::Windows::Forms::Button^ btnClose;
-
-
-
 	private: System::ComponentModel::IContainer^ components;
 
 
@@ -231,7 +247,6 @@ namespace Commande_Composants {
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(181, 22);
 			this->textBox8->TabIndex = 20;
-			this->textBox8->TextChanged += gcnew System::EventHandler(this, &AffichageTab::textBox8_TextChanged);
 			// 
 			// textBox7
 			// 
@@ -281,7 +296,6 @@ namespace Commande_Composants {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(181, 22);
 			this->textBox1->TabIndex = 13;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &AffichageTab::textBox1_TextChanged);
 			// 
 			// label10
 			// 
@@ -412,7 +426,6 @@ namespace Commande_Composants {
 			this->label1->Size = System::Drawing::Size(149, 17);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Nom du demandeur";
-			this->label1->Click += gcnew System::EventHandler(this, &AffichageTab::label1_Click);
 			// 
 			// panel2
 			// 
@@ -436,7 +449,6 @@ namespace Commande_Composants {
 			this->dataGridView2->RowTemplate->Height = 24;
 			this->dataGridView2->Size = System::Drawing::Size(1282, 851);
 			this->dataGridView2->TabIndex = 0;
-			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AffichageTab::dataGridView2_CellContentClick);
 			// 
 			// AffichageTab
 			// 
@@ -485,71 +497,10 @@ namespace Commande_Composants {
 			 static Object^ m_SyncObject = gcnew Object;
 
 
-
-
-	void InitializeDataGridView()
-	{
-		 try
-		 {
-			 // Set up the DataGridView.
-			 dataGridView1->Dock = DockStyle::Fill;
-
-			 // Automatically generate the DataGridView columns.
-			 dataGridView1->AutoGenerateColumns = true;
-
-			 // Set up the data source.
-			 bindingSource1->DataSource = GetData("Select * From Products");
-			 dataGridView1->DataSource = bindingSource1;
-
-			 // Automatically resize the visible rows.
-			 dataGridView1->AutoSizeRowsMode = DataGridViewAutoSizeRowsMode::DisplayedCellsExceptHeaders;
-
-			 // Set the DataGridView control's border.
-			 dataGridView1->BorderStyle = BorderStyle::Fixed3D;
-
-			 // Put the cells in edit mode when user enters them.
-			 dataGridView1->EditMode = DataGridViewEditMode::EditOnEnter;
-		 }
-		 catch (SqlException^)
-		 {
-			 MessageBox::Show("To run this sample replace connection.ConnectionString"
-				 " with a valid connection string to a Northwind"
-				 " database accessible to your system.", "ERROR", MessageBoxButtons::OK, MessageBoxIcon::Exclamation);
-			 System::Threading::Thread::CurrentThread->Abort();
-		 }
-		 catch (System::Exception^ ex)
-		 {
-			 MessageBox::Show(ex->ToString());
-		 }
-	}
-
-	DataTable^ GetData(String^ sqlCommand)
-	{
-		 String^ connectionString = "Integrated Security=SSPI;Persist Security Info=False;"
-			 "Initial Catalog=Northwind;Data Source= localhost";
-		 SqlConnection^ northwindConnection = gcnew SqlConnection(connectionString);
-		 SqlCommand^ command = gcnew SqlCommand(sqlCommand, northwindConnection);
-		 SqlDataAdapter^ adapter = gcnew SqlDataAdapter;
-		 adapter->SelectCommand = command;
-		 DataTable^ table = gcnew DataTable;
-		 adapter->Fill(table);
-		 return table;
-	}
-		private: System::Void bindingSource2_CurrentChanged(System::Object^ sender, System::EventArgs^ e) {
-		}
-
-
-		private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-			btnRefresh_Click(sender, e);
-		}
-
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
 	//System::String^ path = gcnew System::String("Commande.csv"); //a tester 
 	System::String^ path = gcnew System::String("Texte.txt");
 	array<String^>^ lines = File::ReadAllLines(path);
-	//dataGridView2->ClearSelection();
 	dataGridView2->Rows->Clear();
 
 	dataGridView2->Refresh();
@@ -572,6 +523,7 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 		dataGridView2->Rows->Add(rowData);
 	}
 }
+
 private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 	
 	//MessageBox::Show(informations[1]);
@@ -661,12 +613,10 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 
 }
 	   
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void btnClose_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	AffichageTab::Close(); 
 }
-private: System::Void textBox8_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
 };
 }

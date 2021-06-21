@@ -80,25 +80,37 @@ namespace Commande_Composants {
 			// 
 			// button1
 			// 
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(98)));
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->button1->Location = System::Drawing::Point(97, 216);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(174, 75);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Aide";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			// 
 			// button2
 			// 
+			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(98)));
+			this->button2->FlatAppearance->BorderSize = 0;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->button2->Location = System::Drawing::Point(353, 216);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(174, 75);
 			this->button2->TabIndex = 1;
 			this->button2->Text = L"Connexion";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Connexion::button2_Click);
 			// 
 			// textBox1
@@ -124,6 +136,8 @@ namespace Commande_Composants {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->label1->Location = System::Drawing::Point(94, 133);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(124, 20);
@@ -136,6 +150,8 @@ namespace Commande_Composants {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->label2->Location = System::Drawing::Point(94, 51);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(92, 20);
@@ -145,8 +161,11 @@ namespace Commande_Composants {
 			// 
 			// button7
 			// 
+			this->button7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(98)));
 			this->button7->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(126)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->button7->FlatAppearance->BorderSize = 0;
 			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->button7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
@@ -156,13 +175,15 @@ namespace Commande_Composants {
 			this->button7->Size = System::Drawing::Size(61, 61);
 			this->button7->TabIndex = 6;
 			this->button7->Text = L"X";
-			this->button7->UseVisualStyleBackColor = true;
+			this->button7->UseVisualStyleBackColor = false;
 			this->button7->Click += gcnew System::EventHandler(this, &Connexion::button7_Click);
 			// 
 			// Connexion
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
+				static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->ClientSize = System::Drawing::Size(626, 303);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->label2);
@@ -173,6 +194,7 @@ namespace Commande_Composants {
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Connexion";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Connexion";
 			this->ResumeLayout(false);
 			this->PerformLayout();
