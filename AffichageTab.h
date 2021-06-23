@@ -63,7 +63,7 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Panel^ panel2;
 
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
-	private: System::Windows::Forms::Label^ label7;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
@@ -73,11 +73,11 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label9;
-	private: System::Windows::Forms::Label^ label8;
+
 	private: System::Windows::Forms::TextBox^ textBox10;
 	private: System::Windows::Forms::TextBox^ textBox9;
-	private: System::Windows::Forms::TextBox^ textBox8;
-	private: System::Windows::Forms::TextBox^ textBox7;
+
+
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::TextBox^ textBox4;
@@ -115,8 +115,6 @@ namespace Commande_Composants {
 			this->btnRefresh = (gcnew System::Windows::Forms::Button());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -125,8 +123,6 @@ namespace Commande_Composants {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
-			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
@@ -149,8 +145,6 @@ namespace Commande_Composants {
 			this->panel1->Controls->Add(this->btnRefresh);
 			this->panel1->Controls->Add(this->textBox10);
 			this->panel1->Controls->Add(this->textBox9);
-			this->panel1->Controls->Add(this->textBox8);
-			this->panel1->Controls->Add(this->textBox7);
 			this->panel1->Controls->Add(this->textBox6);
 			this->panel1->Controls->Add(this->textBox5);
 			this->panel1->Controls->Add(this->textBox4);
@@ -159,8 +153,6 @@ namespace Commande_Composants {
 			this->panel1->Controls->Add(this->textBox1);
 			this->panel1->Controls->Add(this->label10);
 			this->panel1->Controls->Add(this->label9);
-			this->panel1->Controls->Add(this->label8);
-			this->panel1->Controls->Add(this->label7);
 			this->panel1->Controls->Add(this->label6);
 			this->panel1->Controls->Add(this->label5);
 			this->panel1->Controls->Add(this->label4);
@@ -170,7 +162,7 @@ namespace Commande_Composants {
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(302, 851);
+			this->panel1->Size = System::Drawing::Size(203, 851);
 			this->panel1->TabIndex = 1;
 			// 
 			// btnClose
@@ -201,7 +193,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnAdd->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnAdd->Location = System::Drawing::Point(211, 734);
+			this->btnAdd->Location = System::Drawing::Point(102, 617);
 			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(85, 53);
 			this->btnAdd->TabIndex = 24;
@@ -219,9 +211,9 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnRefresh->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnRefresh->Location = System::Drawing::Point(211, 146);
+			this->btnRefresh->Location = System::Drawing::Point(102, 12);
 			this->btnRefresh->Name = L"btnRefresh";
-			this->btnRefresh->Size = System::Drawing::Size(85, 55);
+			this->btnRefresh->Size = System::Drawing::Size(85, 65);
 			this->btnRefresh->TabIndex = 23;
 			this->btnRefresh->Text = L"Refresh";
 			this->btnRefresh->UseVisualStyleBackColor = false;
@@ -229,35 +221,21 @@ namespace Commande_Composants {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(6, 674);
+			this->textBox10->Location = System::Drawing::Point(6, 552);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(181, 22);
 			this->textBox10->TabIndex = 22;
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(6, 617);
+			this->textBox9->Location = System::Drawing::Point(6, 495);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(181, 22);
 			this->textBox9->TabIndex = 21;
 			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(6, 560);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(181, 22);
-			this->textBox8->TabIndex = 20;
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(6, 503);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(181, 22);
-			this->textBox7->TabIndex = 19;
-			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(6, 446);
+			this->textBox6->Location = System::Drawing::Point(6, 440);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(181, 22);
 			this->textBox6->TabIndex = 18;
@@ -304,7 +282,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label10->Location = System::Drawing::Point(3, 654);
+			this->label10->Location = System::Drawing::Point(3, 532);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(102, 17);
 			this->label10->TabIndex = 12;
@@ -317,37 +295,12 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label9->Location = System::Drawing::Point(3, 597);
+			this->label9->Location = System::Drawing::Point(3, 475);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(131, 17);
 			this->label9->TabIndex = 11;
 			this->label9->Text = L"Date de livraison";
-			// 
-			// label8
-			// 
-			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
-				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label8->Location = System::Drawing::Point(3, 540);
-			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(51, 17);
-			this->label8->TabIndex = 10;
-			this->label8->Text = L"Statut";
-			// 
-			// label7
-			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
-				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label7->Location = System::Drawing::Point(3, 483);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(94, 17);
-			this->label7->TabIndex = 9;
-			this->label7->Text = L"Fournisseur";
+			this->label9->Click += gcnew System::EventHandler(this, &AffichageTab::label9_Click);
 			// 
 			// label6
 			// 
@@ -356,7 +309,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label6->Location = System::Drawing::Point(3, 426);
+			this->label6->Location = System::Drawing::Point(3, 420);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(83, 17);
 			this->label6->TabIndex = 8;
@@ -431,24 +384,25 @@ namespace Commande_Composants {
 			// 
 			this->panel2->Controls->Add(this->dataGridView2);
 			this->panel2->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panel2->Location = System::Drawing::Point(302, 0);
+			this->panel2->Location = System::Drawing::Point(203, 0);
 			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1282, 851);
+			this->panel2->Size = System::Drawing::Size(1381, 851);
 			this->panel2->TabIndex = 2;
 			// 
 			// dataGridView2
 			// 
 			this->dataGridView2->AllowUserToAddRows = false;
 			this->dataGridView2->AllowUserToDeleteRows = false;
-			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->ColumnHeadersHeight = 29;
 			this->dataGridView2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataGridView2->Location = System::Drawing::Point(0, 0);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->RowHeadersWidth = 51;
 			this->dataGridView2->RowTemplate->Height = 24;
-			this->dataGridView2->Size = System::Drawing::Size(1282, 851);
+			this->dataGridView2->Size = System::Drawing::Size(1381, 851);
 			this->dataGridView2->TabIndex = 0;
+			this->dataGridView2->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &AffichageTab::dataGridView2_CellContentClick);
 			// 
 			// AffichageTab
 			// 
@@ -456,7 +410,11 @@ namespace Commande_Composants {
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"AffichageTab";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->panel2->ResumeLayout(false);
@@ -526,50 +484,41 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 
 private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
 	
-	//MessageBox::Show(informations[1]);
 	System::String^ path = gcnew System::String("Texte.txt");
 	array<String^>^ lines = File::ReadAllLines(path);
 
+	//Recupere toutes les valeurs dans les Textbox et les affecte a des Strings
 	String^ demandeur	= textBox1 ->Text;
 	String^ pnCarte		= textBox2 ->Text;
 	String^ numSerie	= textBox3 ->Text;
 	String^ pnComp		= textBox4 ->Text;
 	String^ qte			= textBox5 ->Text;
 	String^ imputation	= textBox6 ->Text;
-		String^ fournisseur = textBox7 ->Text;
-	/*if (textBox7 == "") {
-		textBox7->Text = "En cours de traitement"
-	}
-	else {
-
-	}*/
-	String^ status		= textBox8 ->Text;
-	String^ dateLiv		= textBox9 ->Text;
+	String^ dateRecep	= textBox9 ->Text;
 	String^ commentaire = textBox10->Text;
 
+	String^ statut = "En cours de traitement";
+
+	// Creation de la ligne de completion du tableau
 	array<String^>^ valors = gcnew array<String^> { //N°Commande
 													";" +
 													//Date_Cde
 													";" + 
 													demandeur + 
 													";" + 
-													//Code_BDDP_Carte
+													//Division
 													";" + 
 													pnCarte +
 													";" + 
-													//Repere_Topo_Carte
+													numSerie+
 													";" + 
+													//RepereTopo 
+													";" +
 													pnComp +//Code_BDDP_Composant
-													";" + 
-													 //code sap comp
 													";" + 
 													qte +
 													";" + 
 													imputation+
-													";" +
-													//Besoin_Ou_Stock
-													";" + 
-													//Date_Besoin
 													";" +
 													//Com_Technicien
 													";"+
@@ -579,38 +528,25 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 													";" +
 													//Delai_Livraison
 													";" +
-													status +
+													statut + //Statut
 													";" +
-													commentaire+
+													commentaire+ //comGestionaire
 													";" +
-													//Accord_Fournisseur
-													";" +
-													dateLiv+
-													";" +
-													fournisseur+ 
-													";" +
-													//FlagTech
-													";" +
-													//FlagGest
-													";" +
-													//FlagAskModif
-													";" 
+													dateRecep //Date_Reception
 													};
 
-		File::AppendAllLines("Texte.txt",valors);
+	File::AppendAllLines("Texte.txt",valors);
+
+	//Nettoyage des TextBox's
 	textBox1 ->Clear();
 	textBox2 ->Clear();
 	textBox3 ->Clear();
 	textBox4 ->Clear();
 	textBox5 ->Clear();
 	textBox6 ->Clear();
-	textBox7 ->Clear();
-	textBox8 ->Clear();
 	textBox9 ->Clear();
 	textBox10->Clear();
-		btnRefresh_Click(sender,  e);
-
-
+	btnRefresh_Click(sender,  e);
 }
 	   
 
@@ -618,5 +554,9 @@ private: System::Void btnClose_Click_1(System::Object^ sender, System::EventArgs
 	AffichageTab::Close(); 
 }
 
+private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void label9_Click(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -18,19 +18,13 @@ namespace CppCLRWinformsProjekt {
 	using namespace System::Drawing;
 	using namespace Commande_Composants;
 
-	/// <summary>
-	/// Zusammenfassung für Form1
-	/// </summary>
+
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
 		Form1(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Konstruktorcode hier hinzufügen.
-			//
-
 			// Initialisation du Tableau au lancement de l'application
 			System::String^ path = gcnew System::String("Texte.txt");
 			array<String^>^ lines = File::ReadAllLines(path);
@@ -60,9 +54,7 @@ namespace CppCLRWinformsProjekt {
 		}
 
 	protected:
-		/// <summary>
-		/// Verwendete Ressourcen bereinigen.
-		/// </summary>
+
 		~Form1()
 		{
 			if (components)
@@ -98,16 +90,11 @@ namespace CppCLRWinformsProjekt {
 	protected:
 
 	private:
-		/// <summary>
-		/// Erforderliche Designervariable.
-		/// </summary>
+
 
 
 #pragma region Windows Form Designer generated code
-		/// <summary>
-		/// Erforderliche Methode für die Designerunterstützung.
-		/// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
-		/// </summary>
+
 		void InitializeComponent(void)
 		{
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
@@ -192,7 +179,7 @@ namespace CppCLRWinformsProjekt {
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(114, 83);
 			this->button1->TabIndex = 0;
-			this->button1->Text = L"User";
+			this->button1->Text = L"Utilisateur";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
@@ -210,8 +197,9 @@ namespace CppCLRWinformsProjekt {
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(115, 83);
 			this->button2->TabIndex = 1;
-			this->button2->Text = L"Logout";
+			this->button2->Text = L"Quitter";
 			this->button2->UseVisualStyleBackColor = false;
+			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
 			// 
 			// button9
 			// 
@@ -327,6 +315,7 @@ namespace CppCLRWinformsProjekt {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(1584, 851);
 			this->dataGridView1->TabIndex = 0;
+			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick);
 			// 
 			// Form1
 			// 
@@ -441,7 +430,10 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	button6->BackColor = Color::FromArgb(24, 30, 54);
 
-
+	/*
+	AffichageTab^ Fenetrecommande = gcnew AffichageTab;
+	Fenetrecommande->ShowDialog();
+	*/
 	AffichageTab^ commande = gcnew AffichageTab;
 	commande->TopLevel = false;
 	commande->TopMost = true;
@@ -455,6 +447,11 @@ private: System::Void splitContainer1_Panel2_Paint(System::Object^ sender, Syste
 }
 
 
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
+}
+private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
 };
 }
 // voir cahier des charges "ingenieur composants"
