@@ -25,8 +25,10 @@ namespace CppCLRWinformsProjekt {
 		Form1(void)
 		{
 			InitializeComponent();
+
 			// Initialisation du Tableau au lancement de l'application
-			System::String^ path = gcnew System::String("Texte.txt");
+//			System::String^ path = gcnew System::String("..\BDD\Data.txt");
+			System::String^ path = gcnew System::String("BDD/Data.txt");
 			array<String^>^ lines = File::ReadAllLines(path);
 			dataGridView1->Rows->Clear();
 
@@ -50,7 +52,7 @@ namespace CppCLRWinformsProjekt {
 				dataGridView1->Rows->Add(rowData);
 			}
 
-
+			
 		}
 
 	protected:

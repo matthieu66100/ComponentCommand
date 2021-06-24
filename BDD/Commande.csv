@@ -1,4 +1,4 @@
-Num_Commande;Date_Cde;Demandeur_Nom;Division;Code_BDDP_Carte;Num_Serie_Carte;Repere_Topo_Carte;Code_BDDP_Composant;Qte;Imputation;Com_Technicien;Com_Technicien_Post_Validation;EMS;Delai_Livraison;Statut;Com_Gestion;Date_Reception
+Num_Commande;Date_Cde;Demandeur_Nom;Division;Pn_Carte;Num_Serie_Carte;Repere_Topo_Carte;Code_BDDP_Composant;Qte;Imputation;Com_Technicien;Com_Technicien_Post_Validation;EMS;Delai_Livraison;Statut;Com_Gestion;Date_Reception
 2014/0001;13-mai-14;FAURE;;E36167XX;;Q7404;A2014187;2;;;;SANMINA;départ Sanmina 26/05/2014;Réception faite;OK Sanmina;
 2014/0002;13-mai-14;AUBIER;;E17894XX;;R155;A1240389;10;4428629;;;TRONICO;23/05/2014;Réception faite;OK Tronico;
 2014/0003;13-mai-14;VICTOR;;E17988XX;;;A2002890;16;;;;SELHA;S22;Réception faite;OK Selha;

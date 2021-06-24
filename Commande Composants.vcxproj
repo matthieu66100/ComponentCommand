@@ -201,6 +201,7 @@
     <None Include="BDD\Commande.csv" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="BDD\Data.txt" />
     <Text Include="Texte.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -194,7 +194,7 @@ namespace Commande_Composants {
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Name = L"Connexion";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"Connexion";
 			this->ResumeLayout(false);
 			this->PerformLayout();
