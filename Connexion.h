@@ -119,7 +119,6 @@ namespace Commande_Composants {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(430, 22);
 			this->textBox1->TabIndex = 2;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &Connexion::textBox1_TextChanged_1);
 			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Connexion::textBox1_KeyDown);
 			// 
 			// textBox2
@@ -143,7 +142,6 @@ namespace Commande_Composants {
 			this->label1->Size = System::Drawing::Size(124, 20);
 			this->label1->TabIndex = 4;
 			this->label1->Text = L"Mot de Passe";
-			this->label1->Click += gcnew System::EventHandler(this, &Connexion::label1_Click);
 			// 
 			// label2
 			// 
@@ -157,7 +155,6 @@ namespace Commande_Composants {
 			this->label2->Size = System::Drawing::Size(92, 20);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"Identifiant";
-			this->label2->Click += gcnew System::EventHandler(this, &Connexion::label2_Click);
 			// 
 			// button7
 			// 
@@ -205,18 +202,11 @@ public: String^ GetData() {
 	return textBox1->Text;
 }
 
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label2_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 	//Connexion::~Connexion();
 	Connexion::Close();
 }
-private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (textBox1->Text == "root") {
 		if (textBox2->Text == "root") {
@@ -236,5 +226,6 @@ private: System::Void textBox2_KeyDown(System::Object^ sender, System::Windows::
 		button2->PerformClick();
 	}
 }
+
 };
 }

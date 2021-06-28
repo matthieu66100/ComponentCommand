@@ -69,7 +69,6 @@ namespace Commande_Composants {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(1584, 851);
 			this->dataGridView1->TabIndex = 0;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Tableau::dataGridView1_CellContentClick);
 			// 
 			// Tableau
 			// 
@@ -85,9 +84,7 @@ namespace Commande_Composants {
 
 		}
 #pragma endregion
-	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		
-	}
+
 
 	public:System::Void fctMaj() {
 			System::String^ path = gcnew System::String("Texte.txt");

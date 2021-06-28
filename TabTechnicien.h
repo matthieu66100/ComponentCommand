@@ -1,5 +1,5 @@
 #pragma once
-
+//TabTechnicien
 namespace Commande_Composants {
 
 	using namespace System;
@@ -12,12 +12,12 @@ namespace Commande_Composants {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Description résumée de AffichageTab
+	/// Description résumée de TabTechnicien
 	/// </summary>
-	public ref class AffichageTab : public System::Windows::Forms::Form
+	public ref class TabTechnicien : public System::Windows::Forms::Form
 	{
 	public:
-		AffichageTab(void)
+		TabTechnicien(void)
 		{
 			InitializeComponent();
 			//
@@ -50,7 +50,7 @@ namespace Commande_Composants {
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
 		/// </summary>
-		~AffichageTab()
+		~TabTechnicien()
 		{
 			if (components)
 			{
@@ -188,7 +188,7 @@ namespace Commande_Composants {
 			this->btnClose->TabIndex = 25;
 			this->btnClose->Text = L"X";
 			this->btnClose->UseVisualStyleBackColor = false;
-			this->btnClose->Click += gcnew System::EventHandler(this, &AffichageTab::btnClose_Click_1);
+			this->btnClose->Click += gcnew System::EventHandler(this, &TabTechnicien::btnClose_Click_1);
 			// 
 			// btnAdd
 			// 
@@ -206,7 +206,7 @@ namespace Commande_Composants {
 			this->btnAdd->TabIndex = 24;
 			this->btnAdd->Text = L"ADD";
 			this->btnAdd->UseVisualStyleBackColor = false;
-			this->btnAdd->Click += gcnew System::EventHandler(this, &AffichageTab::btnAdd_Click);
+			this->btnAdd->Click += gcnew System::EventHandler(this, &TabTechnicien::btnAdd_Click);
 			// 
 			// btnRefresh
 			// 
@@ -224,7 +224,7 @@ namespace Commande_Composants {
 			this->btnRefresh->TabIndex = 23;
 			this->btnRefresh->Text = L"Refresh";
 			this->btnRefresh->UseVisualStyleBackColor = false;
-			this->btnRefresh->Click += gcnew System::EventHandler(this, &AffichageTab::btnRefresh_Click);
+			this->btnRefresh->Click += gcnew System::EventHandler(this, &TabTechnicien::btnRefresh_Click);
 			// 
 			// textBox10
 			// 
@@ -232,6 +232,7 @@ namespace Commande_Composants {
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(181, 22);
 			this->textBox10->TabIndex = 22;
+			this->textBox10->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox10_KeyDown);
 			// 
 			// textBox9
 			// 
@@ -239,6 +240,7 @@ namespace Commande_Composants {
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(181, 22);
 			this->textBox9->TabIndex = 21;
+			this->textBox9->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox9_KeyDown);
 			// 
 			// textBox6
 			// 
@@ -246,6 +248,7 @@ namespace Commande_Composants {
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(181, 22);
 			this->textBox6->TabIndex = 18;
+			this->textBox6->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox6_KeyDown);
 			// 
 			// textBox5
 			// 
@@ -253,6 +256,7 @@ namespace Commande_Composants {
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(181, 22);
 			this->textBox5->TabIndex = 17;
+			this->textBox5->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox5_KeyDown);
 			// 
 			// textBox4
 			// 
@@ -260,6 +264,7 @@ namespace Commande_Composants {
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(181, 22);
 			this->textBox4->TabIndex = 16;
+			this->textBox4->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox4_KeyDown);
 			// 
 			// textBox3
 			// 
@@ -267,6 +272,7 @@ namespace Commande_Composants {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(181, 22);
 			this->textBox3->TabIndex = 15;
+			this->textBox3->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox3_KeyDown);
 			// 
 			// textBox7
 			// 
@@ -274,6 +280,7 @@ namespace Commande_Composants {
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(181, 22);
 			this->textBox7->TabIndex = 14;
+			this->textBox7->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox7_KeyDown);
 			// 
 			// textBox2
 			// 
@@ -281,6 +288,7 @@ namespace Commande_Composants {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(181, 22);
 			this->textBox2->TabIndex = 14;
+			this->textBox2->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox2_KeyDown);
 			// 
 			// textBox1
 			// 
@@ -288,6 +296,7 @@ namespace Commande_Composants {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(181, 22);
 			this->textBox1->TabIndex = 13;
+			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &TabTechnicien::textBox1_KeyDown);
 			// 
 			// label10
 			// 
@@ -429,7 +438,7 @@ namespace Commande_Composants {
 			this->dataGridView2->Size = System::Drawing::Size(1381, 851);
 			this->dataGridView2->TabIndex = 0;
 			// 
-			// AffichageTab
+			// TabTechnicien
 			// 
 			this->ClientSize = System::Drawing::Size(1584, 851);
 			this->Controls->Add(this->panel2);
@@ -437,7 +446,7 @@ namespace Commande_Composants {
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
-			this->Name = L"AffichageTab";
+			this->Name = L"TabTechnicien";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->panel1->ResumeLayout(false);
@@ -451,9 +460,9 @@ namespace Commande_Composants {
 
 
 	internal:
-		static property AffichageTab^ GetInstance
+		static property TabTechnicien^ GetInstance
 		{
-			AffichageTab^ get()
+			TabTechnicien^ get()
 			{
 				if (m_DefaultInstance == nullptr || m_DefaultInstance->IsDisposed)
 				{
@@ -462,7 +471,7 @@ namespace Commande_Composants {
 					{
 						if (m_DefaultInstance == nullptr || m_DefaultInstance->IsDisposed)
 						{
-							m_DefaultInstance = gcnew AffichageTab;
+							m_DefaultInstance = gcnew TabTechnicien;
 						}
 					}
 					finally
@@ -476,110 +485,154 @@ namespace Commande_Composants {
 #pragma endregion
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
-	private: static AffichageTab^ m_DefaultInstance;
-			 static Object^ m_SyncObject = gcnew Object;
+	private: static TabTechnicien^ m_DefaultInstance;
+		   static Object^ m_SyncObject = gcnew Object;
 
 
-private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
-	//System::String^ path = gcnew System::String("Commande.csv"); //a tester 
-	System::String^ path = gcnew System::String("BDD/Data.txt");
-	array<String^>^ lines = File::ReadAllLines(path);
-	dataGridView2->Rows->Clear();
+	private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
+		//System::String^ path = gcnew System::String("Commande.csv"); //a tester 
+		System::String^ path = gcnew System::String("BDD/Data.txt");
+		array<String^>^ lines = File::ReadAllLines(path);
+		dataGridView2->Rows->Clear();
 
-	dataGridView2->Refresh();
-	
+		dataGridView2->Refresh();
+
 
 		//ne recupere que la premiere ligne du document et la decoupe
-	array<String^>^ colTitle = lines[0]->Split(';');
+		array<String^>^ colTitle = lines[0]->Split(';');
 
 
 		//permet d'afficher les titres des colonnes
-	for (int j = 0; j < colTitle->Length; j++)
-	{
-		dataGridView2->ColumnCount = colTitle->Length;
-		dataGridView2->Columns[j]->Name = colTitle[j];
-	}
+		for (int j = 0; j < colTitle->Length; j++)
+		{
+			dataGridView2->ColumnCount = colTitle->Length;
+			dataGridView2->Columns[j]->Name = colTitle[j];
+		}
 		//permet d'afficher les contenus des lignes
-	for (int i = 1; i < lines->Length; i++)
-	{
-		array<String^>^ rowData = lines[i]->Split(';');
-		dataGridView2->Rows->Add(rowData);
+		for (int i = 1; i < lines->Length; i++)
+		{
+			array<String^>^ rowData = lines[i]->Split(';');
+			dataGridView2->Rows->Add(rowData);
+		}
 	}
+
+	private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		System::String^ path = gcnew System::String("BDD/Data.txt");
+		array<String^>^ lines = File::ReadAllLines(path);
+
+		//Recupere toutes les valeurs dans les Textbox et les affecte a des Strings
+		String^ demandeur = textBox1->Text;
+		String^ pnCarte = textBox2->Text;
+		String^ numSerie = textBox3->Text;
+		String^ pnComp = textBox4->Text;
+		String^ qte = textBox5->Text;
+		String^ imputation = textBox6->Text;
+		String^ division = textBox7->Text;
+		String^ dateRecep = textBox9->Text;
+		String^ commentaire = textBox10->Text;
+
+		String^ statut = "En cours de traitement";
+
+		// Creation de la ligne de completion du tableau
+		array<String^>^ valors = gcnew array<String^> { //N°Commande
+			";" +
+				//Date_Cde
+				";" +
+				demandeur +
+				";" +
+				division +
+				";" +
+				pnCarte +
+				";" +
+				numSerie +
+				";" +
+				//RepereTopo 
+				";" +
+				pnComp +//Code_BDDP_Composant
+				";" +
+				qte +
+				";" +
+				imputation +
+				";" +
+				//Com_Technicien
+				";" +
+				//Com_Technicien_Post_Validation
+				";" +
+				//EMS
+				";" +
+				//Delai_Livraison
+				";" +
+				statut + //Statut
+				";" +
+				commentaire + //comGestionaire
+				";" +
+				dateRecep //Date_Reception
+		};
+
+		File::AppendAllLines("BDD/Data.txt", valors);
+
+		//Nettoyage des TextBox's
+		textBox1->Clear();
+		textBox2->Clear();
+		textBox3->Clear();
+		textBox4->Clear();
+		textBox5->Clear();
+		textBox6->Clear();
+		textBox7->Clear();
+		textBox9->Clear();
+		textBox10->Clear();
+		btnRefresh_Click(sender, e);
+	}
+
+
+	private: System::Void btnClose_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		TabTechnicien::Close();
+	}
+
+	private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox7->Focus();
+		}
+	}
+	private: System::Void textBox7_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox2->Focus();
+		}
+	}
+	private: System::Void textBox2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox3->Focus();
+		}
+	}
+	private: System::Void textBox3_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox4->Focus();
+		}
+	}
+	private: System::Void textBox4_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox5->Focus();
+		}
+	}
+	private: System::Void textBox5_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox6->Focus();
+		}
+	}
+	private: System::Void textBox6_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox9->Focus();
+		}
+	}
+	private: System::Void textBox9_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+		if (e->KeyValue == (int)Keys::Enter) {
+			textBox10->Focus();
+		}
+	}
+private: System::Void textBox10_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	if (e->KeyValue == (int)Keys::Enter) {
+		btnAdd->PerformClick();
 }
-
-private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
-	
-	System::String^ path = gcnew System::String("BDD/Data.txt");
-	array<String^>^ lines = File::ReadAllLines(path);
-
-	//Recupere toutes les valeurs dans les Textbox et les affecte a des Strings
-	String^ demandeur	= textBox1 ->Text;
-	String^ pnCarte		= textBox2 ->Text;
-	String^ numSerie	= textBox3 ->Text;
-	String^ pnComp		= textBox4 ->Text;
-	String^ qte			= textBox5 ->Text;
-	String^ imputation	= textBox6 ->Text;
-	String^ division	= textBox7 ->Text;
-	String^ dateRecep	= textBox9 ->Text;
-	String^ commentaire = textBox10->Text;
-
-	String^ statut = "En cours de traitement";
-
-	// Creation de la ligne de completion du tableau
-	array<String^>^ valors = gcnew array<String^> { //N°Commande
-													";" +
-													//Date_Cde
-													";" + 
-													demandeur + 
-													";" + 
-													division +
-													";" + 
-													pnCarte +
-													";" + 
-													numSerie+
-													";" + 
-													//RepereTopo 
-													";" +
-													pnComp +//Code_BDDP_Composant
-													";" + 
-													qte +
-													";" + 
-													imputation+
-													";" +
-													//Com_Technicien
-													";"+
-													//Com_Technicien_Post_Validation
-													";" +
-													//EMS
-													";" +
-													//Delai_Livraison
-													";" +
-													statut + //Statut
-													";" +
-													commentaire+ //comGestionaire
-													";" +
-													dateRecep //Date_Reception
-													};
-
-	File::AppendAllLines("BDD/Data.txt",valors);
-
-	//Nettoyage des TextBox's
-	textBox1 ->Clear();
-	textBox2 ->Clear();
-	textBox3 ->Clear();
-	textBox4 ->Clear();
-	textBox5 ->Clear();
-	textBox6 ->Clear();
-	textBox7 ->Clear();
-	textBox9 ->Clear();
-	textBox10->Clear();
-	btnRefresh_Click(sender,  e);
-}
-	   
-
-private: System::Void btnClose_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	AffichageTab::Close(); 
-}
-
 };
 }

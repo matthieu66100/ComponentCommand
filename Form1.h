@@ -133,12 +133,10 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer1->Panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->splitContainer1->Panel1->Controls->Add(this->splitContainer2);
-			this->splitContainer1->Panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::splitContainer1_Panel1_Paint);
 			// 
 			// splitContainer1.Panel2
 			// 
 			this->splitContainer1->Panel2->Controls->Add(this->panel1);
-			this->splitContainer1->Panel2->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::splitContainer1_Panel2_Paint);
 			this->splitContainer1->Size = System::Drawing::Size(1839, 851);
 			this->splitContainer1->SplitterDistance = 251;
 			this->splitContainer1->TabIndex = 0;
@@ -305,7 +303,6 @@ namespace CppCLRWinformsProjekt {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1584, 851);
 			this->panel1->TabIndex = 3;
-			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::panel1_Paint);
 			// 
 			// dataGridView1
 			// 
@@ -317,7 +314,6 @@ namespace CppCLRWinformsProjekt {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(1584, 851);
 			this->dataGridView1->TabIndex = 0;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &Form1::dataGridView1_CellContentClick);
 			// 
 			// Form1
 			// 
@@ -332,7 +328,6 @@ namespace CppCLRWinformsProjekt {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Commandes Composants";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
-			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->splitContainer1->Panel1->ResumeLayout(false);
 			this->splitContainer1->Panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
@@ -349,13 +344,6 @@ namespace CppCLRWinformsProjekt {
 #pragma endregion
 
 
-
-
-private: System::Void Form1_Load(System::Object^ sender, System::EventArgs^ e) {
-
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-}
 
 private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	Connexion^ connexion = gcnew Connexion;
@@ -375,10 +363,7 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	panel1->Controls->Add(connexion);
 	connexion->Show();
 }
-private: System::Void splitContainer1_Panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
 	button6->BackColor = Color::FromArgb(46, 51, 73);
 
@@ -443,17 +428,11 @@ private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e
 	panel1->Controls->Add(commande);
 	commande->Show();
 }
-private: System::Void panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-private: System::Void splitContainer1_Panel2_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-}
-
 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
 }
-private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-}
+
 };
 }
 // voir cahier des charges "ingenieur composants"
