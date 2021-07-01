@@ -111,8 +111,12 @@ namespace Commande_Composants {
 			this->ClientSize = System::Drawing::Size(1584, 851);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"TabShop";
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"TabShop";
+			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 

@@ -1,4 +1,8 @@
 #pragma once
+using namespace System;
+using namespace System::IO;
+using namespace System::Text;
+using namespace System::Data;
 
 namespace Commande_Composants {
 
@@ -45,8 +49,8 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Button^ button1;
 	protected:
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::TextBox^ textBoxID;
+	private: System::Windows::Forms::TextBox^ textBoxPW;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button7;
@@ -71,8 +75,8 @@ namespace Commande_Composants {
 		{
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxID = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxPW = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->button7 = (gcnew System::Windows::Forms::Button());
@@ -113,22 +117,24 @@ namespace Commande_Composants {
 			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &Connexion::button2_Click);
 			// 
-			// textBox1
+			// textBoxID
 			// 
-			this->textBox1->Location = System::Drawing::Point(97, 71);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(430, 22);
-			this->textBox1->TabIndex = 2;
-			this->textBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Connexion::textBox1_KeyDown);
+			this->textBoxID->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::Suggest;
+			this->textBoxID->AutoCompleteSource = System::Windows::Forms::AutoCompleteSource::CustomSource;
+			this->textBoxID->Location = System::Drawing::Point(97, 71);
+			this->textBoxID->Name = L"textBoxID";
+			this->textBoxID->Size = System::Drawing::Size(430, 22);
+			this->textBoxID->TabIndex = 2;
+			this->textBoxID->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Connexion::textBoxID_KeyDown);
 			// 
-			// textBox2
+			// textBoxPW
 			// 
-			this->textBox2->Location = System::Drawing::Point(97, 153);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(430, 22);
-			this->textBox2->TabIndex = 3;
-			this->textBox2->UseSystemPasswordChar = true;
-			this->textBox2->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Connexion::textBox2_KeyDown);
+			this->textBoxPW->Location = System::Drawing::Point(97, 153);
+			this->textBoxPW->Name = L"textBoxPW";
+			this->textBoxPW->Size = System::Drawing::Size(430, 22);
+			this->textBoxPW->TabIndex = 3;
+			this->textBoxPW->UseSystemPasswordChar = true;
+			this->textBoxPW->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &Connexion::textBoxPW_KeyDown);
 			// 
 			// label1
 			// 
@@ -185,21 +191,26 @@ namespace Commande_Composants {
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->textBox2);
-			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->textBoxPW);
+			this->Controls->Add(this->textBoxID);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
+			this->MaximizeBox = false;
+			this->MinimizeBox = false;
 			this->Name = L"Connexion";
-			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Connexion";
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+
+		//Return TextID pour d'autres classes
 public: String^ GetData() {
-	return textBox1->Text;
+	return textBoxID->Text;
+
 }
 
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -207,20 +218,44 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (textBox1->Text == "root") {
-		if (textBox2->Text == "root") {
-			Connexion::Close();
+	
+	System::String^ path = gcnew System::String("BDD/Utilisateur.txt");
+	array<String^>^ lines = File::ReadAllLines(path);
+
+	array<String^>^ colTitle = lines[0]->Split(';');
+
+	int count=0;
+	for (int i = 1; i < lines->Length; i++)
+	{
+		array<String^>^ rowData = lines[i]->Split(';'); //[0]= Nom [3]=MDP
+		
+		if (textBoxID->Text == rowData[0]) { 
+			if (textBoxPW->Text == rowData[3]) {
+				count = 1;
+			}
 		}
 	}
+	
+	if (count == 1)
+	{
+				MessageBox::Show("connexion reussie");
+				Connexion::Close();
+	}
+	else
+	{
+			MessageBox::Show("connexion echouée");
+	}
 }
+
+
 	   //admin enterkey
-private: System::Void textBox1_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+private: System::Void textBoxID_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if (e->KeyValue == (int)Keys::Enter) {
-		textBox2->Focus();
+		textBoxPW->Focus();
 	}
 }
 	   //password enterkey
-private: System::Void textBox2_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+private: System::Void textBoxPW_KeyDown(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
 	if (e->KeyValue == (int)Keys::Enter) {
 		button2->PerformClick();
 	}
