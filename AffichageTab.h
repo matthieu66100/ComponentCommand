@@ -61,9 +61,7 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::BindingSource^ bindingSource1;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Panel^ panel2;
-
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
-
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::Label^ label5;
 	private: System::Windows::Forms::Label^ label4;
@@ -73,11 +71,8 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label9;
-
 	private: System::Windows::Forms::TextBox^ textBox10;
 	private: System::Windows::Forms::TextBox^ textBox9;
-
-
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::TextBox^ textBox4;
@@ -445,10 +440,7 @@ namespace Commande_Composants {
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
-
 		}
-
-
 
 	internal:
 		static property AffichageTab^ GetInstance
@@ -576,7 +568,6 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 	btnRefresh_Click(sender,  e);
 }
 	   
-
 private: System::Void btnClose_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	AffichageTab::Close(); 
 }

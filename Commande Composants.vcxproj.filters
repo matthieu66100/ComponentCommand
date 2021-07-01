@@ -38,6 +38,12 @@
     <ClInclude Include="Tableau.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="TabGestionaire1.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="TabShop.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -61,6 +67,12 @@
     <ClCompile Include="Tableau.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
+    <ClCompile Include="TabGestionaire1.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="TabShop.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico">
@@ -73,5 +85,6 @@
   <ItemGroup>
     <Text Include="Texte.txt" />
     <Text Include="BDD\Data.txt" />
+    <Text Include="BDD\Utilisateur.txt" />
   </ItemGroup>
 </Project>

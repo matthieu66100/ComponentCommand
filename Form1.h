@@ -2,8 +2,8 @@
 #include "Connexion.h"
 #include "AffichageTab.h"
 #include "Tableau.h"
-
-
+#include "TabGestionaire1.h"
+#include "TabShop.h"
 
 namespace CppCLRWinformsProjekt {
 
@@ -14,10 +14,8 @@ namespace CppCLRWinformsProjekt {
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
-	using namespace System::Data::SqlClient;
 	using namespace System::Drawing;
 	using namespace Commande_Composants;
-
 
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
@@ -51,12 +49,9 @@ namespace CppCLRWinformsProjekt {
 				array<String^>^ rowData = lines[i]->Split(';');
 				dataGridView1->Rows->Add(rowData);
 			}
-
-			
 		}
 
 	protected:
-
 		~Form1()
 		{
 			if (components)
@@ -65,27 +60,24 @@ namespace CppCLRWinformsProjekt {
 			}
 		}
 	private: System::Windows::Forms::SplitContainer^ splitContainer1;
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button4;
+	private: System::Windows::Forms::Button^ btnUser;
+
+	private: System::Windows::Forms::Button^ btnQuit;
+
+	private: System::Windows::Forms::Button^ btnTech;
+
+	private: System::Windows::Forms::Button^ btnGest;
+
 	private: System::Windows::Forms::Button^ btnShop;
+	private: System::Windows::Forms::Button^ btnIDC;
+	private: System::Windows::Forms::Button^ btnCom;
 
-	private: System::Windows::Forms::Button^ button6;
-
-
-	private: System::Windows::Forms::Button^ button9;
 
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::SplitContainer^ splitContainer2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
-
-
-
-
 	private: System::ComponentModel::IContainer^ components;
-
 
 	protected:
 
@@ -93,20 +85,18 @@ namespace CppCLRWinformsProjekt {
 
 	private:
 
-
-
 #pragma region Windows Form Designer generated code
 
 		void InitializeComponent(void)
 		{
 			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
 			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button9 = (gcnew System::Windows::Forms::Button());
-			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->btnUser = (gcnew System::Windows::Forms::Button());
+			this->btnQuit = (gcnew System::Windows::Forms::Button());
+			this->btnCom = (gcnew System::Windows::Forms::Button());
+			this->btnTech = (gcnew System::Windows::Forms::Button());
+			this->btnGest = (gcnew System::Windows::Forms::Button());
+			this->btnIDC = (gcnew System::Windows::Forms::Button());
 			this->btnShop = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -150,131 +140,131 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// splitContainer2.Panel1
 			// 
-			this->splitContainer2->Panel1->Controls->Add(this->button1);
-			this->splitContainer2->Panel1->Controls->Add(this->button2);
+			this->splitContainer2->Panel1->Controls->Add(this->btnUser);
+			this->splitContainer2->Panel1->Controls->Add(this->btnQuit);
 			// 
 			// splitContainer2.Panel2
 			// 
-			this->splitContainer2->Panel2->Controls->Add(this->button9);
-			this->splitContainer2->Panel2->Controls->Add(this->button3);
-			this->splitContainer2->Panel2->Controls->Add(this->button4);
-			this->splitContainer2->Panel2->Controls->Add(this->button6);
+			this->splitContainer2->Panel2->Controls->Add(this->btnCom);
+			this->splitContainer2->Panel2->Controls->Add(this->btnTech);
+			this->splitContainer2->Panel2->Controls->Add(this->btnGest);
+			this->splitContainer2->Panel2->Controls->Add(this->btnIDC);
 			this->splitContainer2->Panel2->Controls->Add(this->btnShop);
 			this->splitContainer2->Size = System::Drawing::Size(251, 851);
 			this->splitContainer2->SplitterDistance = 83;
 			this->splitContainer2->TabIndex = 0;
 			// 
-			// button1
+			// btnUser
 			// 
-			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+			this->btnUser->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(98)));
-			this->button1->Dock = System::Windows::Forms::DockStyle::Left;
-			this->button1->FlatAppearance->BorderSize = 0;
-			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnUser->Dock = System::Windows::Forms::DockStyle::Left;
+			this->btnUser->FlatAppearance->BorderSize = 0;
+			this->btnUser->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnUser->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnUser->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button1->Location = System::Drawing::Point(0, 0);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(114, 83);
-			this->button1->TabIndex = 0;
-			this->button1->Text = L"Utilisateur";
-			this->button1->UseVisualStyleBackColor = false;
-			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
+			this->btnUser->Location = System::Drawing::Point(0, 0);
+			this->btnUser->Name = L"btnUser";
+			this->btnUser->Size = System::Drawing::Size(114, 83);
+			this->btnUser->TabIndex = 0;
+			this->btnUser->Text = L"Utilisateur";
+			this->btnUser->UseVisualStyleBackColor = false;
+			this->btnUser->Click += gcnew System::EventHandler(this, &Form1::btnUser_Click);
 			// 
-			// button2
+			// btnQuit
 			// 
-			this->button2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+			this->btnQuit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(98)));
-			this->button2->Dock = System::Windows::Forms::DockStyle::Right;
-			this->button2->FlatAppearance->BorderSize = 0;
-			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnQuit->Dock = System::Windows::Forms::DockStyle::Right;
+			this->btnQuit->FlatAppearance->BorderSize = 0;
+			this->btnQuit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnQuit->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->btnQuit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button2->Location = System::Drawing::Point(136, 0);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(115, 83);
-			this->button2->TabIndex = 1;
-			this->button2->Text = L"Quitter";
-			this->button2->UseVisualStyleBackColor = false;
-			this->button2->Click += gcnew System::EventHandler(this, &Form1::button2_Click);
+			this->btnQuit->Location = System::Drawing::Point(136, 0);
+			this->btnQuit->Name = L"btnQuit";
+			this->btnQuit->Size = System::Drawing::Size(115, 83);
+			this->btnQuit->TabIndex = 1;
+			this->btnQuit->Text = L"Quitter";
+			this->btnQuit->UseVisualStyleBackColor = false;
+			this->btnQuit->Click += gcnew System::EventHandler(this, &Form1::btnQuit_Click);
 			// 
-			// button9
+			// btnCom
 			// 
-			this->button9->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button9->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+			this->btnCom->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnCom->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->button9->FlatAppearance->BorderSize = 0;
-			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button9->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnCom->FlatAppearance->BorderSize = 0;
+			this->btnCom->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnCom->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->btnCom->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button9->Location = System::Drawing::Point(0, 280);
-			this->button9->Name = L"button9";
-			this->button9->Size = System::Drawing::Size(251, 70);
-			this->button9->TabIndex = 7;
-			this->button9->Text = L"Passer Commande";
-			this->button9->UseVisualStyleBackColor = true;
-			this->button9->Click += gcnew System::EventHandler(this, &Form1::button9_Click);
+			this->btnCom->Location = System::Drawing::Point(0, 280);
+			this->btnCom->Name = L"btnCom";
+			this->btnCom->Size = System::Drawing::Size(251, 70);
+			this->btnCom->TabIndex = 7;
+			this->btnCom->Text = L"Passer Commande";
+			this->btnCom->UseVisualStyleBackColor = true;
+			this->btnCom->Click += gcnew System::EventHandler(this, &Form1::btnCom_Click);
 			// 
-			// button3
+			// btnTech
 			// 
-			this->button3->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->button3->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button3->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+			this->btnTech->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->btnTech->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnTech->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->button3->FlatAppearance->BorderSize = 0;
-			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button3->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnTech->FlatAppearance->BorderSize = 0;
+			this->btnTech->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnTech->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->btnTech->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button3->Location = System::Drawing::Point(0, 210);
-			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(251, 70);
-			this->button3->TabIndex = 2;
-			this->button3->Text = L"Technicien";
-			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &Form1::button3_Click);
+			this->btnTech->Location = System::Drawing::Point(0, 210);
+			this->btnTech->Name = L"btnTech";
+			this->btnTech->Size = System::Drawing::Size(251, 70);
+			this->btnTech->TabIndex = 2;
+			this->btnTech->Text = L"Technicien";
+			this->btnTech->UseVisualStyleBackColor = true;
+			this->btnTech->Click += gcnew System::EventHandler(this, &Form1::btnTech_Click);
 			// 
-			// button4
+			// btnGest
 			// 
-			this->button4->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->button4->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button4->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+			this->btnGest->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->btnGest->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnGest->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->button4->FlatAppearance->BorderSize = 0;
-			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button4->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnGest->FlatAppearance->BorderSize = 0;
+			this->btnGest->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnGest->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->btnGest->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button4->Location = System::Drawing::Point(0, 140);
-			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(251, 70);
-			this->button4->TabIndex = 3;
-			this->button4->Text = L"Gestionaire";
-			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &Form1::button4_Click_2);
+			this->btnGest->Location = System::Drawing::Point(0, 140);
+			this->btnGest->Name = L"btnGest";
+			this->btnGest->Size = System::Drawing::Size(251, 70);
+			this->btnGest->TabIndex = 3;
+			this->btnGest->Text = L"Gestionaire";
+			this->btnGest->UseVisualStyleBackColor = true;
+			this->btnGest->Click += gcnew System::EventHandler(this, &Form1::btnGest_Click);
 			// 
-			// button6
+			// btnIDC
 			// 
-			this->button6->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->button6->Dock = System::Windows::Forms::DockStyle::Top;
-			this->button6->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+			this->btnIDC->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->btnIDC->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnIDC->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->button6->FlatAppearance->BorderSize = 0;
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnIDC->FlatAppearance->BorderSize = 0;
+			this->btnIDC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnIDC->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->btnIDC->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button6->Location = System::Drawing::Point(0, 70);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(251, 70);
-			this->button6->TabIndex = 5;
-			this->button6->Text = L"IDC";
-			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &Form1::button6_Click);
+			this->btnIDC->Location = System::Drawing::Point(0, 70);
+			this->btnIDC->Name = L"btnIDC";
+			this->btnIDC->Size = System::Drawing::Size(251, 70);
+			this->btnIDC->TabIndex = 5;
+			this->btnIDC->Text = L"IDC";
+			this->btnIDC->UseVisualStyleBackColor = true;
+			this->btnIDC->Click += gcnew System::EventHandler(this, &Form1::btnIDC_Click);
 			// 
 			// btnShop
 			// 
@@ -343,19 +333,16 @@ namespace CppCLRWinformsProjekt {
 		}
 #pragma endregion
 
-
-
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void btnUser_Click(System::Object^ sender, System::EventArgs^ e) {
 	Connexion^ connexion = gcnew Connexion;
 	//connexion -> ShowDialog();
 
 	if (connexion->GetData() == "") {
-		button1->Text = "User";
+		btnUser->Text = "Utilisateur";
 	}
 	else {
-		button1->Text = connexion->GetData();
+		btnUser->Text = connexion->GetData();
 	}
-
 
 	connexion->TopLevel = false;
 	connexion->TopMost = true;
@@ -363,27 +350,41 @@ private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e
 	panel1->Controls->Add(connexion);
 	connexion->Show();
 }
+private: System::Void btnIDC_Click(System::Object^ sender, System::EventArgs^ e) {
+	btnIDC->BackColor = Color::FromArgb(46, 51, 73);
 
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-	button6->BackColor = Color::FromArgb(46, 51, 73);
-
-	button3->BackColor = Color::FromArgb(24, 30, 54);
-	button4->BackColor = Color::FromArgb(24, 30, 54);
+	btnTech->BackColor = Color::FromArgb(24, 30, 54);
+	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
-	button9->BackColor = Color::FromArgb(24, 30, 54);
+	btnCom->BackColor = Color::FromArgb(24, 30, 54);
 }
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {	
-	button3->BackColor = Color::FromArgb(46, 51, 73);
+private: System::Void btnTech_Click(System::Object^ sender, System::EventArgs^ e) {
+	btnTech->BackColor = Color::FromArgb(46, 51, 73);
 	
-	button4->BackColor = Color::FromArgb(24, 30, 54);
+	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
-	button6->BackColor = Color::FromArgb(24, 30, 54);
-	button9->BackColor = Color::FromArgb(24, 30, 54);
+	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
+	btnCom->BackColor = Color::FromArgb(24, 30, 54);
 	
 	//mise en place de la table si aucun profil n'est selectioné
 	//AffichageTab^ tab = gcnew AffichageTab{Dock = DockStyle.fill, TopLevel = false};
 
-	Tableau^ tab = gcnew Tableau;
+	AffichageTab^ commande = gcnew AffichageTab;
+	commande->TopLevel = false;
+	commande->TopMost = true;
+	panel1->Controls->Clear();
+	panel1->Controls->Add(commande);
+	commande->Show();
+}
+private: System::Void btnGest_Click(System::Object^ sender, System::EventArgs^ e) {
+	btnGest->BackColor = Color::FromArgb(46, 51, 73);
+
+	btnTech->BackColor = Color::FromArgb(24, 30, 54);
+	btnShop->BackColor = Color::FromArgb(24, 30, 54);
+	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
+	btnCom->BackColor = Color::FromArgb(24, 30, 54);
+	
+	TabGestionaire^ tab = gcnew TabGestionaire;
 	tab;
 	tab->TopLevel = false;
 	tab->TopMost = true;
@@ -392,44 +393,42 @@ private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e
 	tab->Show();
 	
 }
-private: System::Void button4_Click_2(System::Object^ sender, System::EventArgs^ e) {
-	button4->BackColor = Color::FromArgb(46, 51, 73);
-
-	button3->BackColor = Color::FromArgb(24, 30, 54);
-	btnShop->BackColor = Color::FromArgb(24, 30, 54);
-	button6->BackColor = Color::FromArgb(24, 30, 54);
-	button9->BackColor = Color::FromArgb(24, 30, 54);
-}
 private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e) {
 	btnShop->BackColor = Color::FromArgb(46, 51, 73);
 
-	button3->BackColor = Color::FromArgb(24, 30, 54);
-	button4->BackColor = Color::FromArgb(24, 30, 54);
-	button6->BackColor = Color::FromArgb(24, 30, 54);
-	button9->BackColor = Color::FromArgb(24, 30, 54);
+	btnTech->BackColor = Color::FromArgb(24, 30, 54);
+	btnGest->BackColor = Color::FromArgb(24, 30, 54);
+	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
+	btnCom->BackColor = Color::FromArgb(24, 30, 54);
+
+	TabShop^ shop = gcnew TabShop;
+	shop->TopLevel = false;
+	shop->TopMost = true;
+	panel1->Controls->Clear();
+	panel1->Controls->Add(shop);
+	shop->Show();
+
 }
 	   //test importation des données 
-private: System::Void button9_Click(System::Object^ sender, System::EventArgs^ e) {
-	button9->BackColor = Color::FromArgb(46, 51, 73);
+private: System::Void btnCom_Click(System::Object^ sender, System::EventArgs^ e) {
+	btnCom->BackColor = Color::FromArgb(46, 51, 73);
 
-	button3->BackColor = Color::FromArgb(24, 30, 54);
-	button4->BackColor = Color::FromArgb(24, 30, 54);
+	btnTech->BackColor = Color::FromArgb(24, 30, 54);
+	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
-	button6->BackColor = Color::FromArgb(24, 30, 54);
+	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
 
 	/*
-	AffichageTab^ Fenetrecommande = gcnew AffichageTab;
-	Fenetrecommande->ShowDialog();
-	*/
 	AffichageTab^ commande = gcnew AffichageTab;
 	commande->TopLevel = false;
 	commande->TopMost = true;
 	panel1->Controls->Clear();
 	panel1->Controls->Add(commande);
 	commande->Show();
-}
+	*/
 
-private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void btnQuit_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
 }
 

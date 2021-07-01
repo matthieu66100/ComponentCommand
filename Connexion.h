@@ -203,7 +203,6 @@ public: String^ GetData() {
 }
 
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-	//Connexion::~Connexion();
 	Connexion::Close();
 }
 
