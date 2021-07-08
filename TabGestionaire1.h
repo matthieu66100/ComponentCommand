@@ -8,6 +8,9 @@ namespace Commande_Composants {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace System::Text;
+	using namespace System::IO;
+
 
 	/// <summary>
 	/// Description résumée de TabGestionaire
@@ -21,6 +24,26 @@ namespace Commande_Composants {
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			System::String^ path = gcnew System::String("BDD/Data.txt");
+			array<String^>^ lines = File::ReadAllLines(path);
+			dataGridView1->Rows->Clear();
+
+			//ne recupere que la premiere ligne du document et la decoupe
+			array<String^>^ colTitle = lines[0]->Split(';');
+
+			//permet d'afficher les titres des colonnes
+			for (int j = 0; j < colTitle->Length; j++)
+			{
+				dataGridView1->ColumnCount = colTitle->Length;
+				dataGridView1->Columns[j]->Name = colTitle[j];
+			}
+			//permet d'afficher les contenus des lignes
+			for (int i = 1; i < lines->Length; i++)
+			{
+				array<String^>^ rowData = lines[i]->Split(';');
+				dataGridView1->Rows->Add(rowData);
+			}
+			dataGridView1->Refresh();
 		}
 
 	protected:
@@ -39,6 +62,7 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Button^ btnClose;
 
 	private: System::Windows::Forms::Button^ btnRefresh;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
 
 
 
@@ -97,7 +121,9 @@ namespace Commande_Composants {
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->btnClose = (gcnew System::Windows::Forms::Button());
 			this->btnRefresh = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// panel1
@@ -146,11 +172,23 @@ namespace Commande_Composants {
 			this->btnRefresh->Text = L"Refresh";
 			this->btnRefresh->UseVisualStyleBackColor = false;
 			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->dataGridView1->Location = System::Drawing::Point(203, 0);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(1381, 851);
+			this->dataGridView1->TabIndex = 3;
+			// 
 			// TabGestionaire
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1584, 851);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->panel1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->MaximizeBox = false;
@@ -159,6 +197,7 @@ namespace Commande_Composants {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
 			this->panel1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}

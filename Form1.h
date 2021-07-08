@@ -194,6 +194,7 @@ namespace CppCLRWinformsProjekt {
 			// btnCom
 			// 
 			this->btnCom->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnCom->Enabled = false;
 			this->btnCom->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
 			this->btnCom->FlatAppearance->BorderSize = 0;
@@ -207,6 +208,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnCom->TabIndex = 7;
 			this->btnCom->Text = L"Passer Commande";
 			this->btnCom->UseVisualStyleBackColor = true;
+			this->btnCom->Visible = false;
 			this->btnCom->Click += gcnew System::EventHandler(this, &Form1::btnCom_Click);
 			// 
 			// btnTech
@@ -226,6 +228,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnTech->TabIndex = 2;
 			this->btnTech->Text = L"Technicien";
 			this->btnTech->UseVisualStyleBackColor = true;
+			this->btnTech->Visible = false;
 			this->btnTech->Click += gcnew System::EventHandler(this, &Form1::btnTech_Click);
 			// 
 			// btnGest
@@ -245,6 +248,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnGest->TabIndex = 3;
 			this->btnGest->Text = L"Gestionaire";
 			this->btnGest->UseVisualStyleBackColor = true;
+			this->btnGest->Visible = false;
 			this->btnGest->Click += gcnew System::EventHandler(this, &Form1::btnGest_Click);
 			// 
 			// btnIDC
@@ -264,6 +268,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnIDC->TabIndex = 5;
 			this->btnIDC->Text = L"IDC";
 			this->btnIDC->UseVisualStyleBackColor = true;
+			this->btnIDC->Visible = false;
 			this->btnIDC->Click += gcnew System::EventHandler(this, &Form1::btnIDC_Click);
 			// 
 			// btnShop
@@ -283,6 +288,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnShop->TabIndex = 4;
 			this->btnShop->Text = L"Magasin";
 			this->btnShop->UseVisualStyleBackColor = true;
+			this->btnShop->Visible = false;
 			this->btnShop->Click += gcnew System::EventHandler(this, &Form1::btnShop_Click);
 			// 
 			// panel1
@@ -335,20 +341,35 @@ namespace CppCLRWinformsProjekt {
 
 private: System::Void btnUser_Click(System::Object^ sender, System::EventArgs^ e) {
 	Connexion^ connexion = gcnew Connexion;
-	//connexion -> ShowDialog();
+	connexion -> ShowDialog();
 
-	if (connexion->GetData() == "") {
+	if (connexion->GetData() == "")
+	{
 		btnUser->Text = "Utilisateur";
 	}
-	else {
-		btnUser->Text = connexion->GetData();
+	else{
+	btnUser->Text = connexion->GetData();
+	}
+	String^ etat = connexion->GetStatus();
+
+	btnIDC->Visible =  false;
+	btnTech->Visible = false;
+	btnShop->Visible = false;
+	btnGest->Visible = false;
+
+	if (etat == "Gest") {
+		btnIDC->Visible = true;
+		btnTech->Visible = true;
+		btnShop->Visible = true;
+		btnGest->Visible = true;
+	}
+	else if (etat == "Tech") {
+		btnTech->Visible = true;
+	}
+	else if(etat == "Mag"){
+		btnShop->Visible = true;
 	}
 
-	connexion->TopLevel = false;
-	connexion->TopMost = true;
-	panel1->Controls->Clear();
-	panel1->Controls->Add(connexion);
-	connexion->Show();
 }
 private: System::Void btnIDC_Click(System::Object^ sender, System::EventArgs^ e) {
 	btnIDC->BackColor = Color::FromArgb(46, 51, 73);
@@ -357,6 +378,9 @@ private: System::Void btnIDC_Click(System::Object^ sender, System::EventArgs^ e)
 	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	btnCom->BackColor = Color::FromArgb(24, 30, 54);
+
+	Connexion^ connexion = gcnew Connexion;
+	
 }
 private: System::Void btnTech_Click(System::Object^ sender, System::EventArgs^ e) {
 	btnTech->BackColor = Color::FromArgb(46, 51, 73);
@@ -431,6 +455,7 @@ private: System::Void btnCom_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void btnQuit_Click(System::Object^ sender, System::EventArgs^ e) {
 	Application::Exit();
 }
+
 
 };
 }

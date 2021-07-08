@@ -195,7 +195,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnAdd->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnAdd->Location = System::Drawing::Point(99, 646);
+			this->btnAdd->Location = System::Drawing::Point(102, 786);
 			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(85, 53);
 			this->btnAdd->TabIndex = 24;
@@ -224,8 +224,9 @@ namespace Commande_Composants {
 			// textBox10
 			// 
 			this->textBox10->Location = System::Drawing::Point(6, 604);
+			this->textBox10->Multiline = true;
 			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(181, 22);
+			this->textBox10->Size = System::Drawing::Size(181, 164);
 			this->textBox10->TabIndex = 22;
 			// 
 			// textBox9
@@ -440,6 +441,7 @@ namespace Commande_Composants {
 			this->panel2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->ResumeLayout(false);
+
 		}
 
 	internal:

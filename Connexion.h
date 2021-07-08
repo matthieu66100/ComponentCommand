@@ -55,7 +55,8 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::Button^ button7;
 
-	protected:
+	public:
+		String^ status;
 
 
 	protected:
@@ -204,6 +205,7 @@ namespace Commande_Composants {
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
+
 		}
 #pragma endregion
 
@@ -211,6 +213,10 @@ namespace Commande_Composants {
 public: String^ GetData() {
 	return textBoxID->Text;
 
+}
+
+public: String^ GetStatus() {
+	return status;
 }
 
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -232,18 +238,20 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 		if (textBoxID->Text == rowData[0]) { 
 			if (textBoxPW->Text == rowData[3]) {
 				count = 1;
+				status = rowData[2];
 			}
 		}
 	}
 	
 	if (count == 1)
 	{
-				MessageBox::Show("connexion reussie");
-				Connexion::Close();
+		//MessageBox::Show("connexion reussie");
+		//MessageBox::Show(status);
+		Connexion::Close();
 	}
 	else
 	{
-			MessageBox::Show("connexion echouée");
+		MessageBox::Show("Identifiant ou Mot de passe incorrect");
 	}
 }
 

@@ -1,4 +1,4 @@
-Num_Commande;Date_Cde;Demandeur_Nom;Division;Pn_Carte;Num_Serie_Carte;Repere_Topo_Carte;Code_BDDP_Composant;Qte;Imputation;Com_Technicien;Com_Technicien_Post_Validation;EMS;Delai_Livraison;Statut;Com_Gestion;Date_Reception
+Num_Commande;Date_Cmde;Demandeur_Nom;Division;Pn_Carte;Num_Serie_Carte;Repere_Topo_Carte;Composant ;Qte;Imputation;Com_Technicien;Com_Technicien_Post_Validation;Fournisseur;Date supposée de réception;Statut;Com_Gestion;Date_Reception
 2019/0292;23-mai-19;BRAULT;;E36142AB;3006;MA2404;A1254076;5;PRVL-NIVR-33-LPE-027;;;COFIDUR;SH 06/07*;Réception faite;ASW;
 2019/0293;23-mai-19;BRAULT;;E36142AB;3006;C2402, C2403;A2006970;10;PRVL-NIVR-33-LPE-027;;;COFIDUR;SH 14/06*;Réception faite;;
 2019/0294;23-mai-19;BRAULT;;E36142AB;3006;CR2400;A1253728;5;PRVL-NIVR-33-LPE-027;;;COFIDUR;SH 06/7* ASW;Réception faite;;
