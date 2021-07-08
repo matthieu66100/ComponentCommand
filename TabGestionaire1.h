@@ -60,51 +60,10 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Panel^ panel1;
 	protected:
 	private: System::Windows::Forms::Button^ btnClose;
-
 	private: System::Windows::Forms::Button^ btnRefresh;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	private: System::Windows::Forms::Button^ btnAdd;
 	protected:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -120,6 +79,7 @@ namespace Commande_Composants {
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->btnClose = (gcnew System::Windows::Forms::Button());
+			this->btnAdd = (gcnew System::Windows::Forms::Button());
 			this->btnRefresh = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->panel1->SuspendLayout();
@@ -131,6 +91,7 @@ namespace Commande_Composants {
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->panel1->Controls->Add(this->btnClose);
+			this->panel1->Controls->Add(this->btnAdd);
 			this->panel1->Controls->Add(this->btnRefresh);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panel1->Location = System::Drawing::Point(0, 0);
@@ -155,6 +116,24 @@ namespace Commande_Composants {
 			this->btnClose->Text = L"X";
 			this->btnClose->UseVisualStyleBackColor = false;
 			// 
+			// btnAdd
+			// 
+			this->btnAdd->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+				static_cast<System::Int32>(static_cast<System::Byte>(98)));
+			this->btnAdd->FlatAppearance->BorderSize = 0;
+			this->btnAdd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->btnAdd->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->btnAdd->Location = System::Drawing::Point(12, 343);
+			this->btnAdd->Name = L"btnAdd";
+			this->btnAdd->Size = System::Drawing::Size(175, 65);
+			this->btnAdd->TabIndex = 23;
+			this->btnAdd->Text = L"Mettre à jour";
+			this->btnAdd->UseVisualStyleBackColor = false;
+			this->btnAdd->Click += gcnew System::EventHandler(this, &TabGestionaire::btnAdd_Click);
+			// 
 			// btnRefresh
 			// 
 			this->btnRefresh->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
@@ -171,6 +150,7 @@ namespace Commande_Composants {
 			this->btnRefresh->TabIndex = 23;
 			this->btnRefresh->Text = L"Refresh";
 			this->btnRefresh->UseVisualStyleBackColor = false;
+			this->btnRefresh->Click += gcnew System::EventHandler(this, &TabGestionaire::btnRefresh_Click);
 			// 
 			// dataGridView1
 			// 
@@ -203,5 +183,82 @@ namespace Commande_Composants {
 		}
 #pragma endregion
 	
+private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	System::String^ path = gcnew System::String("BDD/Data.txt");
+	TextWriter^ sw = gcnew StreamWriter(path);
+	int rowcount = dataGridView1->Rows->Count;
+	int colcount = dataGridView1->Columns->Count;
+
+	sw->WriteLine("Num_Commande;Date_Cmde;Demandeur_Nom;Division;Pn_Carte;Num_Serie_Carte;Repere_Topo_Carte;Composant ;Qte;Imputation;Com_Technicien;Com_Technicien_Post_Validation;Fournisseur;Date supposée de réception;Statut;Com_Gestion;Date_Reception");
+	for (int i = 0; i < rowcount-1 ; i++) {
+
+		sw->WriteLine(
+			  dataGridView1->Rows[i]->Cells[0]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[1]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[2]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[3]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[4]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[5]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[6]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[7]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[8]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[9]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[10]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[11]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[12]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[13]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[14]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[15]->Value->ToString()
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[16]->Value->ToString()
+		);
+	}
+	sw->Close();
+	MessageBox::Show("informations mises a jour");
+	btnRefresh_Click(sender, e);
+
+}
+private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs^ e) {
+	//System::String^ path = gcnew System::String("Commande.csv"); //a tester 
+	System::String^ path = gcnew System::String("BDD/Data.txt");
+	array<String^>^ lines = File::ReadAllLines(path);
+	dataGridView1->Rows->Clear();
+
+	dataGridView1->Refresh();
+
+
+	//ne recupere que la premiere ligne du document et la decoupe
+	array<String^>^ colTitle = lines[0]->Split(';');
+
+
+	//permet d'afficher les titres des colonnes
+	for (int j = 0; j < colTitle->Length; j++)
+	{
+		dataGridView1->ColumnCount = colTitle->Length;
+		dataGridView1->Columns[j]->Name = colTitle[j];
+	}
+	//permet d'afficher les contenus des lignes
+	for (int i = 1; i < lines->Length; i++)
+	{
+		array<String^>^ rowData = lines[i]->Split(';');
+		dataGridView1->Rows->Add(rowData);
+	}
+}
 };
 }

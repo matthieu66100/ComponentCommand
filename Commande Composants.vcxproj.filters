@@ -83,8 +83,8 @@
     <None Include="BDD\Commande.csv" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Texte.txt" />
     <Text Include="BDD\Data.txt" />
     <Text Include="BDD\Utilisateur.txt" />
+    <Text Include="BDD\TestRemplissage.txt" />
   </ItemGroup>
 </Project>
