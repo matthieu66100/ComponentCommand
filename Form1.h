@@ -4,6 +4,7 @@
 #include "Tableau.h"
 #include "TabGestionaire1.h"
 #include "TabShop.h"
+#include "GestUtilisateurs.h"
 
 namespace CppCLRWinformsProjekt {
 
@@ -76,6 +77,7 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::SplitContainer^ splitContainer2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ btnGestUtilisateurs;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -93,6 +95,7 @@ namespace CppCLRWinformsProjekt {
 			this->splitContainer2 = (gcnew System::Windows::Forms::SplitContainer());
 			this->btnUser = (gcnew System::Windows::Forms::Button());
 			this->btnQuit = (gcnew System::Windows::Forms::Button());
+			this->btnGestUtilisateurs = (gcnew System::Windows::Forms::Button());
 			this->btnCom = (gcnew System::Windows::Forms::Button());
 			this->btnTech = (gcnew System::Windows::Forms::Button());
 			this->btnGest = (gcnew System::Windows::Forms::Button());
@@ -145,6 +148,7 @@ namespace CppCLRWinformsProjekt {
 			// 
 			// splitContainer2.Panel2
 			// 
+			this->splitContainer2->Panel2->Controls->Add(this->btnGestUtilisateurs);
 			this->splitContainer2->Panel2->Controls->Add(this->btnCom);
 			this->splitContainer2->Panel2->Controls->Add(this->btnTech);
 			this->splitContainer2->Panel2->Controls->Add(this->btnGest);
@@ -190,6 +194,25 @@ namespace CppCLRWinformsProjekt {
 			this->btnQuit->Text = L"Quitter";
 			this->btnQuit->UseVisualStyleBackColor = false;
 			this->btnQuit->Click += gcnew System::EventHandler(this, &Form1::btnQuit_Click);
+			// 
+			// btnGestUtilisateurs
+			// 
+			this->btnGestUtilisateurs->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnGestUtilisateurs->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
+			this->btnGestUtilisateurs->FlatAppearance->BorderSize = 0;
+			this->btnGestUtilisateurs->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnGestUtilisateurs->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->btnGestUtilisateurs->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
+				static_cast<System::Int32>(static_cast<System::Byte>(126)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->btnGestUtilisateurs->Location = System::Drawing::Point(0, 350);
+			this->btnGestUtilisateurs->Name = L"btnGestUtilisateurs";
+			this->btnGestUtilisateurs->Size = System::Drawing::Size(251, 70);
+			this->btnGestUtilisateurs->TabIndex = 8;
+			this->btnGestUtilisateurs->Text = L"Gestion Utilisateurs";
+			this->btnGestUtilisateurs->UseVisualStyleBackColor = true;
+			this->btnGestUtilisateurs->Visible = false;
+			this->btnGestUtilisateurs->Click += gcnew System::EventHandler(this, &Form1::btnGestUtilisateurs_Click);
 			// 
 			// btnCom
 			// 
@@ -359,12 +382,14 @@ private: System::Void btnUser_Click(System::Object^ sender, System::EventArgs^ e
 	btnTech->Visible = false;
 	btnShop->Visible = false;
 	btnGest->Visible = false;
+	btnGestUtilisateurs->Visible = false;
 
 	if (etat == "Gest") {
 		btnIDC->Visible = true;
 		btnTech->Visible = true;
 		btnShop->Visible = true;
 		btnGest->Visible = true;
+		btnGestUtilisateurs->Visible = true;
 	}
 	else if (etat == "Tech") {
 		btnTech->Visible = true;
@@ -460,6 +485,15 @@ private: System::Void btnQuit_Click(System::Object^ sender, System::EventArgs^ e
 }
 
 
+private: System::Void btnGestUtilisateurs_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestUtilisateurs^ gUtili = gcnew GestUtilisateurs;
+	gUtili->TopLevel = false;
+	gUtili->TopMost = true;
+	panel1->Controls->Clear();
+	panel1->Controls->Add(gUtili);
+	gUtili->Show();
+
+}
 };
 }
 // voir cahier des charges "ingenieur composants"

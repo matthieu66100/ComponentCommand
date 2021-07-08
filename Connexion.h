@@ -29,7 +29,7 @@ namespace Commande_Composants {
 		Connexion(String^data)
 		{
 			InitializeComponent();
-			
+
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//

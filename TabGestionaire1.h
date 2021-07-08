@@ -63,6 +63,7 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Button^ btnRefresh;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ btnAdd;
+	private: System::Windows::Forms::Label^ label1;
 	protected:
 	private:
 		/// <summary>
@@ -78,6 +79,7 @@ namespace Commande_Composants {
 		void InitializeComponent(void)
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnClose = (gcnew System::Windows::Forms::Button());
 			this->btnAdd = (gcnew System::Windows::Forms::Button());
 			this->btnRefresh = (gcnew System::Windows::Forms::Button());
@@ -90,6 +92,7 @@ namespace Commande_Composants {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->panel1->Controls->Add(this->label1);
 			this->panel1->Controls->Add(this->btnClose);
 			this->panel1->Controls->Add(this->btnAdd);
 			this->panel1->Controls->Add(this->btnRefresh);
@@ -98,6 +101,19 @@ namespace Commande_Composants {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(203, 851);
 			this->panel1->TabIndex = 2;
+			// 
+			// label1
+			// 
+			this->label1->Dock = System::Windows::Forms::DockStyle::Bottom;
+			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->label1->Location = System::Drawing::Point(0, 727);
+			this->label1->Name = L"label1";
+			this->label1->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->label1->Size = System::Drawing::Size(203, 59);
+			this->label1->TabIndex = 26;
+			this->label1->Text = L"Modifications apportées au tableau";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// btnClose
 			// 
@@ -115,20 +131,22 @@ namespace Commande_Composants {
 			this->btnClose->TabIndex = 25;
 			this->btnClose->Text = L"X";
 			this->btnClose->UseVisualStyleBackColor = false;
+			this->btnClose->Click += gcnew System::EventHandler(this, &TabGestionaire::btnClose_Click);
 			// 
 			// btnAdd
 			// 
 			this->btnAdd->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(98)));
+			this->btnAdd->Dock = System::Windows::Forms::DockStyle::Bottom;
 			this->btnAdd->FlatAppearance->BorderSize = 0;
 			this->btnAdd->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->btnAdd->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnAdd->Location = System::Drawing::Point(12, 343);
+			this->btnAdd->Location = System::Drawing::Point(0, 786);
 			this->btnAdd->Name = L"btnAdd";
-			this->btnAdd->Size = System::Drawing::Size(175, 65);
+			this->btnAdd->Size = System::Drawing::Size(203, 65);
 			this->btnAdd->TabIndex = 23;
 			this->btnAdd->Text = L"Mettre à jour";
 			this->btnAdd->UseVisualStyleBackColor = false;
@@ -259,6 +277,9 @@ private: System::Void btnRefresh_Click(System::Object^ sender, System::EventArgs
 		array<String^>^ rowData = lines[i]->Split(';');
 		dataGridView1->Rows->Add(rowData);
 	}
+}
+private: System::Void btnClose_Click(System::Object^ sender, System::EventArgs^ e) {
+	TabGestionaire::Close();
 }
 };
 }
