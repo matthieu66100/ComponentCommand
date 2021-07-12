@@ -71,7 +71,7 @@ namespace CppCLRWinformsProjekt {
 
 	private: System::Windows::Forms::Button^ btnShop;
 	private: System::Windows::Forms::Button^ btnIDC;
-	private: System::Windows::Forms::Button^ btnCom;
+
 
 
 	private: System::Windows::Forms::Panel^ panel1;
@@ -96,7 +96,6 @@ namespace CppCLRWinformsProjekt {
 			this->btnUser = (gcnew System::Windows::Forms::Button());
 			this->btnQuit = (gcnew System::Windows::Forms::Button());
 			this->btnGestUtilisateurs = (gcnew System::Windows::Forms::Button());
-			this->btnCom = (gcnew System::Windows::Forms::Button());
 			this->btnTech = (gcnew System::Windows::Forms::Button());
 			this->btnGest = (gcnew System::Windows::Forms::Button());
 			this->btnIDC = (gcnew System::Windows::Forms::Button());
@@ -149,7 +148,6 @@ namespace CppCLRWinformsProjekt {
 			// splitContainer2.Panel2
 			// 
 			this->splitContainer2->Panel2->Controls->Add(this->btnGestUtilisateurs);
-			this->splitContainer2->Panel2->Controls->Add(this->btnCom);
 			this->splitContainer2->Panel2->Controls->Add(this->btnTech);
 			this->splitContainer2->Panel2->Controls->Add(this->btnGest);
 			this->splitContainer2->Panel2->Controls->Add(this->btnIDC);
@@ -205,7 +203,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnGestUtilisateurs->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->btnGestUtilisateurs->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(126)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnGestUtilisateurs->Location = System::Drawing::Point(0, 350);
+			this->btnGestUtilisateurs->Location = System::Drawing::Point(0, 280);
 			this->btnGestUtilisateurs->Name = L"btnGestUtilisateurs";
 			this->btnGestUtilisateurs->Size = System::Drawing::Size(251, 70);
 			this->btnGestUtilisateurs->TabIndex = 8;
@@ -213,26 +211,6 @@ namespace CppCLRWinformsProjekt {
 			this->btnGestUtilisateurs->UseVisualStyleBackColor = true;
 			this->btnGestUtilisateurs->Visible = false;
 			this->btnGestUtilisateurs->Click += gcnew System::EventHandler(this, &Form1::btnGestUtilisateurs_Click);
-			// 
-			// btnCom
-			// 
-			this->btnCom->Dock = System::Windows::Forms::DockStyle::Top;
-			this->btnCom->Enabled = false;
-			this->btnCom->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
-				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->btnCom->FlatAppearance->BorderSize = 0;
-			this->btnCom->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnCom->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->btnCom->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
-				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnCom->Location = System::Drawing::Point(0, 280);
-			this->btnCom->Name = L"btnCom";
-			this->btnCom->Size = System::Drawing::Size(251, 70);
-			this->btnCom->TabIndex = 7;
-			this->btnCom->Text = L"Passer Commande";
-			this->btnCom->UseVisualStyleBackColor = true;
-			this->btnCom->Visible = false;
-			this->btnCom->Click += gcnew System::EventHandler(this, &Form1::btnCom_Click);
 			// 
 			// btnTech
 			// 
@@ -405,9 +383,7 @@ private: System::Void btnIDC_Click(System::Object^ sender, System::EventArgs^ e)
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
 	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
-	btnCom->BackColor = Color::FromArgb(24, 30, 54);
-
-	Connexion^ connexion = gcnew Connexion;
+	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 	
 }
 private: System::Void btnTech_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -416,10 +392,7 @@ private: System::Void btnTech_Click(System::Object^ sender, System::EventArgs^ e
 	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
-	btnCom->BackColor = Color::FromArgb(24, 30, 54);
-	
-	//mise en place de la table si aucun profil n'est selectioné
-	//AffichageTab^ tab = gcnew AffichageTab{Dock = DockStyle.fill, TopLevel = false};
+	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 
 	AffichageTab^ commande = gcnew AffichageTab;
 	commande->TopLevel = false;
@@ -434,7 +407,7 @@ private: System::Void btnGest_Click(System::Object^ sender, System::EventArgs^ e
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
-	btnCom->BackColor = Color::FromArgb(24, 30, 54);
+	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 	
 	TabGestionaire^ tab = gcnew TabGestionaire;
 	tab;
@@ -443,7 +416,6 @@ private: System::Void btnGest_Click(System::Object^ sender, System::EventArgs^ e
 	panel1->Controls->Clear();
 	panel1->Controls->Add(tab);
 	tab->Show();
-	
 }
 private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e) {
 	btnShop->BackColor = Color::FromArgb(46, 51, 73);
@@ -451,7 +423,8 @@ private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
 	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
-	btnCom->BackColor = Color::FromArgb(24, 30, 54);
+	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
+
 
 	TabShop^ shop = gcnew TabShop;
 	shop->TopLevel = false;
@@ -461,31 +434,16 @@ private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e
 	shop->Show();
 
 }
-	   //test importation des données 
-private: System::Void btnCom_Click(System::Object^ sender, System::EventArgs^ e) {
-	btnCom->BackColor = Color::FromArgb(46, 51, 73);
+
+
+private: System::Void btnGestUtilisateurs_Click(System::Object^ sender, System::EventArgs^ e) {
+	btnGestUtilisateurs->BackColor = Color::FromArgb(46, 51, 73);
 
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
 	btnGest->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
 
-	/*
-	AffichageTab^ commande = gcnew AffichageTab;
-	commande->TopLevel = false;
-	commande->TopMost = true;
-	panel1->Controls->Clear();
-	panel1->Controls->Add(commande);
-	commande->Show();
-	*/
-
-	}
-private: System::Void btnQuit_Click(System::Object^ sender, System::EventArgs^ e) {
-	Application::Exit();
-}
-
-
-private: System::Void btnGestUtilisateurs_Click(System::Object^ sender, System::EventArgs^ e) {
 	GestUtilisateurs^ gUtili = gcnew GestUtilisateurs;
 	gUtili->TopLevel = false;
 	gUtili->TopMost = true;
@@ -493,6 +451,9 @@ private: System::Void btnGestUtilisateurs_Click(System::Object^ sender, System::
 	panel1->Controls->Add(gUtili);
 	gUtili->Show();
 
+}
+private: System::Void btnQuit_Click(System::Object^ sender, System::EventArgs^ e) {
+	Application::Exit();
 }
 };
 }

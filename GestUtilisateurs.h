@@ -138,12 +138,13 @@ namespace Commande_Composants {
 			this->button7->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->button7->Location = System::Drawing::Point(875, 12);
+			this->button7->Location = System::Drawing::Point(1105, 12);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(61, 61);
 			this->button7->TabIndex = 7;
 			this->button7->Text = L"X";
 			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &GestUtilisateurs::button7_Click);
 			// 
 			// label2
 			// 
@@ -152,7 +153,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label2->Location = System::Drawing::Point(27, 115);
+			this->label2->Location = System::Drawing::Point(27, 112);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(101, 20);
 			this->label2->TabIndex = 11;
@@ -165,7 +166,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label1->Location = System::Drawing::Point(27, 197);
+			this->label1->Location = System::Drawing::Point(28, 238);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(73, 20);
 			this->label1->TabIndex = 10;
@@ -173,7 +174,7 @@ namespace Commande_Composants {
 			// 
 			// textBoxFirstName
 			// 
-			this->textBoxFirstName->Location = System::Drawing::Point(30, 217);
+			this->textBoxFirstName->Location = System::Drawing::Point(31, 261);
 			this->textBoxFirstName->Name = L"textBoxFirstName";
 			this->textBoxFirstName->Size = System::Drawing::Size(430, 22);
 			this->textBoxFirstName->TabIndex = 9;
@@ -189,7 +190,7 @@ namespace Commande_Composants {
 			// 
 			// textBoxPW
 			// 
-			this->textBoxPW->Location = System::Drawing::Point(30, 309);
+			this->textBoxPW->Location = System::Drawing::Point(31, 402);
 			this->textBoxPW->Name = L"textBoxPW";
 			this->textBoxPW->Size = System::Drawing::Size(430, 22);
 			this->textBoxPW->TabIndex = 9;
@@ -202,7 +203,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label3->Location = System::Drawing::Point(27, 289);
+			this->label3->Location = System::Drawing::Point(28, 379);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(124, 20);
 			this->label3->TabIndex = 10;
@@ -215,7 +216,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label4->Location = System::Drawing::Point(27, 386);
+			this->label4->Location = System::Drawing::Point(27, 510);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(59, 20);
 			this->label4->TabIndex = 10;
@@ -231,7 +232,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnSave->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnSave->Location = System::Drawing::Point(147, 482);
+			this->btnSave->Location = System::Drawing::Point(149, 598);
 			this->btnSave->Name = L"btnSave";
 			this->btnSave->Size = System::Drawing::Size(174, 75);
 			this->btnSave->TabIndex = 12;
@@ -243,7 +244,7 @@ namespace Commande_Composants {
 			// 
 			this->comboBoxStatus->FormattingEnabled = true;
 			this->comboBoxStatus->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Gest", L"Tech", L"Mag" });
-			this->comboBoxStatus->Location = System::Drawing::Point(31, 409);
+			this->comboBoxStatus->Location = System::Drawing::Point(31, 533);
 			this->comboBoxStatus->Name = L"comboBoxStatus";
 			this->comboBoxStatus->Size = System::Drawing::Size(429, 24);
 			this->comboBoxStatus->TabIndex = 14;
@@ -253,7 +254,7 @@ namespace Commande_Composants {
 			this->panel1->Controls->Add(this->dataGridView1);
 			this->panel1->Location = System::Drawing::Point(501, 135);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(435, 422);
+			this->panel1->Size = System::Drawing::Size(665, 422);
 			this->panel1->TabIndex = 15;
 			// 
 			// dataGridView1
@@ -264,7 +265,7 @@ namespace Commande_Composants {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(435, 422);
+			this->dataGridView1->Size = System::Drawing::Size(665, 422);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// label5
@@ -274,7 +275,7 @@ namespace Commande_Composants {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label5->Location = System::Drawing::Point(352, 29);
+			this->label5->Location = System::Drawing::Point(496, 29);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(240, 25);
 			this->label5->TabIndex = 11;
@@ -290,7 +291,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnMaJ->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnMaJ->Location = System::Drawing::Point(638, 603);
+			this->btnMaJ->Location = System::Drawing::Point(762, 598);
 			this->btnMaJ->Name = L"btnMaJ";
 			this->btnMaJ->Size = System::Drawing::Size(174, 75);
 			this->btnMaJ->TabIndex = 12;
@@ -304,7 +305,7 @@ namespace Commande_Composants {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)), static_cast<System::Int32>(static_cast<System::Byte>(30)),
 				static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->ClientSize = System::Drawing::Size(948, 719);
+			this->ClientSize = System::Drawing::Size(1178, 719);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->comboBoxStatus);
 			this->Controls->Add(this->btnMaJ);
@@ -408,6 +409,10 @@ private: System::Void btnMaJ_Click(System::Object^ sender, System::EventArgs^ e)
 	sw->Close();
 	MessageBox::Show("informations mises a jour");
 	
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
+	GestUtilisateurs::Close();
+
 }
 };
 }
