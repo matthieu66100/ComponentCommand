@@ -410,7 +410,6 @@ private: System::Void btnGest_Click(System::Object^ sender, System::EventArgs^ e
 	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 	
 	TabGestionaire^ tab = gcnew TabGestionaire;
-	tab;
 	tab->TopLevel = false;
 	tab->TopMost = true;
 	panel1->Controls->Clear();
@@ -426,12 +425,12 @@ private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e
 	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 
 
-	TabShop^ shop = gcnew TabShop;
-	shop->TopLevel = false;
-	shop->TopMost = true;
+	TabGestionaire^ tab = gcnew TabGestionaire;
+	tab->TopLevel = false;
+	tab->TopMost = true;
 	panel1->Controls->Clear();
-	panel1->Controls->Add(shop);
-	shop->Show();
+	panel1->Controls->Add(tab);
+	tab->Show();
 
 }
 
