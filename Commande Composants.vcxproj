@@ -157,6 +157,7 @@
     </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="TabGestionaire1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -186,6 +187,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
+    <Image Include="icon1.ico" />
+    <Image Include="Icones\icons8-fermer-la-fenêtre-50.png" />
+    <Image Include="Icones\quit_icon_149882.ico" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -220,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BDD\Commande.csv" />
+    <None Include="file1.bin" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="BDD\Data.txt" />

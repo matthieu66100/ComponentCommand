@@ -244,7 +244,9 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 			+ ";"
 			+ dataGridView1->Rows[i]->Cells[15]->Value->ToString()
 			+ ";"
-			+ dataGridView1->Rows[i]->Cells[16]->Value->ToString()
+			+ dataGridView1->Rows[i]->Cells[16]->Value->ToString() 
+			+ ";"
+			+ dataGridView1->Rows[i]->Cells[17]->Value->ToString()
 		);
 	}
 	sw->Close();

@@ -47,6 +47,9 @@
     <ClInclude Include="GestUtilisateurs.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="resource1.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppCLR_WinformsProjekt.cpp">
@@ -84,9 +87,21 @@
     <Image Include="app.ico">
       <Filter>Ressourcendateien</Filter>
     </Image>
+    <Image Include="Icones\icons8-fermer-la-fenêtre-50.png">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="icon1.ico">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
+    <Image Include="Icones\quit_icon_149882.ico">
+      <Filter>Ressourcendateien</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <None Include="BDD\Commande.csv" />
+    <None Include="file1.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="BDD\Data.txt" />

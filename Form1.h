@@ -26,7 +26,6 @@ namespace CppCLRWinformsProjekt {
 			InitializeComponent();
 
 			// Initialisation du Tableau au lancement de l'application
-//			System::String^ path = gcnew System::String("..\BDD\Data.txt");
 			System::String^ path = gcnew System::String("BDD/Data.txt");
 			array<String^>^ lines = File::ReadAllLines(path);
 			dataGridView1->Rows->Clear();
@@ -62,28 +61,18 @@ namespace CppCLRWinformsProjekt {
 		}
 	private: System::Windows::Forms::SplitContainer^ splitContainer1;
 	private: System::Windows::Forms::Button^ btnUser;
-
 	private: System::Windows::Forms::Button^ btnQuit;
-
 	private: System::Windows::Forms::Button^ btnTech;
-
 	private: System::Windows::Forms::Button^ btnGest;
-
 	private: System::Windows::Forms::Button^ btnShop;
 	private: System::Windows::Forms::Button^ btnIDC;
-
-
-
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::SplitContainer^ splitContainer2;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ btnGestUtilisateurs;
 
+
 	private: System::ComponentModel::IContainer^ components;
-
-	protected:
-
-	protected:
 
 	private:
 
@@ -169,7 +158,7 @@ namespace CppCLRWinformsProjekt {
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->btnUser->Location = System::Drawing::Point(0, 0);
 			this->btnUser->Name = L"btnUser";
-			this->btnUser->Size = System::Drawing::Size(114, 83);
+			this->btnUser->Size = System::Drawing::Size(123, 83);
 			this->btnUser->TabIndex = 0;
 			this->btnUser->Text = L"Utilisateur";
 			this->btnUser->UseVisualStyleBackColor = false;
@@ -185,9 +174,9 @@ namespace CppCLRWinformsProjekt {
 			this->btnQuit->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->btnQuit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnQuit->Location = System::Drawing::Point(136, 0);
+			this->btnQuit->Location = System::Drawing::Point(128, 0);
 			this->btnQuit->Name = L"btnQuit";
-			this->btnQuit->Size = System::Drawing::Size(115, 83);
+			this->btnQuit->Size = System::Drawing::Size(123, 83);
 			this->btnQuit->TabIndex = 1;
 			this->btnQuit->Text = L"Quitter";
 			this->btnQuit->UseVisualStyleBackColor = false;
@@ -347,6 +336,7 @@ private: System::Void btnUser_Click(System::Object^ sender, System::EventArgs^ e
 	Connexion^ connexion = gcnew Connexion;
 	connexion -> ShowDialog();
 
+	//changement du texte du bouton selon la personne connectee
 	if (connexion->GetData() == "")
 	{
 		btnUser->Text = "Utilisateur";
@@ -356,17 +346,19 @@ private: System::Void btnUser_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	String^ etat = connexion->GetStatus();
 
+	//par defaut et sans connexion les boutons ne sont pas accessibles
 	btnIDC->Visible =  false;
 	btnTech->Visible = false;
 	btnShop->Visible = false;
 	btnGest->Visible = false;
 	btnGestUtilisateurs->Visible = false;
 
+	//detection du statut du user et affichage des boutons selon ses droits.
 	if (etat == "Gest") {
 		btnIDC->Visible = true;
 		btnTech->Visible = true;
 		btnShop->Visible = true;
-		btnGest->Visible = true;
+		//btnGest->Visible = true;
 		btnGestUtilisateurs->Visible = true;
 	}
 	else if (etat == "Tech") {
@@ -424,7 +416,6 @@ private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
 	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 
-
 	TabGestionaire^ tab = gcnew TabGestionaire;
 	tab->TopLevel = false;
 	tab->TopMost = true;
@@ -433,8 +424,6 @@ private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e
 	tab->Show();
 
 }
-
-
 private: System::Void btnGestUtilisateurs_Click(System::Object^ sender, System::EventArgs^ e) {
 	btnGestUtilisateurs->BackColor = Color::FromArgb(46, 51, 73);
 
@@ -456,4 +445,33 @@ private: System::Void btnQuit_Click(System::Object^ sender, System::EventArgs^ e
 }
 };
 }
+
+/*
+NOTES:
+
+1-Documentation sur le chaier des charges "ingenieur composants"
+2-Utilisation d'une BDD "de secours" grâce à des fichiers textes. transferer les données sur un serveur SQL dès que possible.
+3-GIT mis à jour regulierement.
+4-Renomer les [design] pour une comprehension ameliorée du code
+5-Ajouter du commentaire code dans les differentes pages
+6-
+
+*/
+
+/*
+TODO:
+
+- ajouter les colonnes supplementaires aux tableaux
+--coche "urgent" + colonne "urgent"
+--colonne "numero de commande" à coté de gestionaire
+--colonne "kanban crée" à gauche de date de recption
+-trier le numero de commande le plus recent
+-ajouter une autocompletion du numero de commande en l'incrementant
+-
+-
+-
+
+*/
 // voir cahier des charges "ingenieur composants"
+//
+//

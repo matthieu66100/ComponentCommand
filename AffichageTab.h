@@ -83,6 +83,7 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Button^ btnClose;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::CheckBox^ checkBox1;
 
 	private: System::ComponentModel::IContainer^ components;
 
@@ -131,6 +132,7 @@ namespace Commande_Composants {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
@@ -140,6 +142,7 @@ namespace Commande_Composants {
 			// 
 			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->panel1->Controls->Add(this->checkBox1);
 			this->panel1->Controls->Add(this->btnClose);
 			this->panel1->Controls->Add(this->btnAdd);
 			this->panel1->Controls->Add(this->btnRefresh);
@@ -231,56 +234,56 @@ namespace Commande_Composants {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(6, 547);
+			this->textBox9->Location = System::Drawing::Point(6, 506);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(181, 22);
 			this->textBox9->TabIndex = 21;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(6, 492);
+			this->textBox6->Location = System::Drawing::Point(6, 451);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(181, 22);
 			this->textBox6->TabIndex = 18;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(6, 437);
+			this->textBox5->Location = System::Drawing::Point(6, 396);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(181, 22);
 			this->textBox5->TabIndex = 17;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(6, 382);
+			this->textBox4->Location = System::Drawing::Point(6, 341);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(181, 22);
 			this->textBox4->TabIndex = 16;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(6, 327);
+			this->textBox3->Location = System::Drawing::Point(6, 286);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(181, 22);
 			this->textBox3->TabIndex = 15;
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(6, 216);
+			this->textBox7->Location = System::Drawing::Point(6, 175);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(181, 22);
 			this->textBox7->TabIndex = 14;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(6, 270);
+			this->textBox2->Location = System::Drawing::Point(6, 229);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(181, 22);
 			this->textBox2->TabIndex = 14;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(3, 167);
+			this->textBox1->Location = System::Drawing::Point(3, 126);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(181, 22);
 			this->textBox1->TabIndex = 13;
@@ -305,7 +308,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label9->Location = System::Drawing::Point(3, 527);
+			this->label9->Location = System::Drawing::Point(3, 486);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(131, 17);
 			this->label9->TabIndex = 11;
@@ -318,7 +321,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label6->Location = System::Drawing::Point(3, 472);
+			this->label6->Location = System::Drawing::Point(3, 431);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(83, 17);
 			this->label6->TabIndex = 8;
@@ -331,7 +334,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label5->Location = System::Drawing::Point(3, 417);
+			this->label5->Location = System::Drawing::Point(3, 376);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(34, 17);
 			this->label5->TabIndex = 7;
@@ -344,7 +347,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label4->Location = System::Drawing::Point(0, 307);
+			this->label4->Location = System::Drawing::Point(0, 266);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(112, 17);
 			this->label4->TabIndex = 6;
@@ -357,7 +360,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label3->Location = System::Drawing::Point(3, 362);
+			this->label3->Location = System::Drawing::Point(3, 321);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(135, 17);
 			this->label3->TabIndex = 5;
@@ -370,7 +373,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label7->Location = System::Drawing::Point(0, 196);
+			this->label7->Location = System::Drawing::Point(0, 155);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(65, 17);
 			this->label7->TabIndex = 4;
@@ -383,7 +386,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label2->Location = System::Drawing::Point(0, 250);
+			this->label2->Location = System::Drawing::Point(0, 209);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(174, 17);
 			this->label2->TabIndex = 4;
@@ -396,7 +399,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label1->Location = System::Drawing::Point(3, 147);
+			this->label1->Location = System::Drawing::Point(3, 106);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(149, 17);
 			this->label1->TabIndex = 3;
@@ -424,6 +427,20 @@ namespace Commande_Composants {
 			this->dataGridView2->RowTemplate->Height = 24;
 			this->dataGridView2->Size = System::Drawing::Size(1381, 851);
 			this->dataGridView2->TabIndex = 0;
+			// 
+			// checkBox1
+			// 
+			this->checkBox1->AutoSize = true;
+			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->checkBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+				static_cast<System::Int32>(static_cast<System::Byte>(240)));
+			this->checkBox1->Location = System::Drawing::Point(105, 549);
+			this->checkBox1->Name = L"checkBox1";
+			this->checkBox1->Size = System::Drawing::Size(79, 21);
+			this->checkBox1->TabIndex = 26;
+			this->checkBox1->Text = L"Urgent";
+			this->checkBox1->UseVisualStyleBackColor = true;
 			// 
 			// AffichageTab
 			// 
@@ -516,6 +533,13 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 	String^ division	= textBox7 ->Text;
 	String^ dateRecep	= textBox9 ->Text;
 	String^ commentaire = textBox10->Text;
+	String^ urgent ;
+	if (checkBox1->Checked) {
+		urgent = "OUI";
+	}
+	else {
+		urgent = "NON";
+	}
 
 	String^ statut = "En cours de traitement";
 
@@ -524,6 +548,8 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 													";" +
 													//Date_Cde
 													";" + 
+													urgent+
+													";"+
 													demandeur + 
 													";" + 
 													division +
@@ -544,7 +570,7 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 													";"+
 													//Com_Technicien_Post_Validation
 													";" +
-													//EMS
+													//Fournisseur
 													";" +
 													//Delai_Livraison
 													";" +
