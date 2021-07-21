@@ -578,6 +578,8 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 													";" +
 													commentaire+ //comGestionaire
 													";" +
+													//Kanban_cree
+													";" +
 													dateRecep //Date_Reception
 													};
 

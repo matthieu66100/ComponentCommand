@@ -34,10 +34,16 @@ namespace Commande_Composants {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Panel^ panel1;
+	private: System::Windows::Forms::SplitContainer^ splitContainer1;
 	protected:
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+
 	private: System::Windows::Forms::Button^ btnClose;
-	private: System::Windows::Forms::Button^ btnRefresh;
+	private: System::Windows::Forms::Button^ btnMaJ;
+
+	protected:
+
+
 
 	private:
 		/// <summary>
@@ -52,23 +58,49 @@ namespace Commande_Composants {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->splitContainer1 = (gcnew System::Windows::Forms::SplitContainer());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->btnClose = (gcnew System::Windows::Forms::Button());
-			this->btnRefresh = (gcnew System::Windows::Forms::Button());
-			this->panel1->SuspendLayout();
+			this->btnMaJ = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->BeginInit();
+			this->splitContainer1->Panel1->SuspendLayout();
+			this->splitContainer1->Panel2->SuspendLayout();
+			this->splitContainer1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// panel1
+			// splitContainer1
 			// 
-			this->panel1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
-				static_cast<System::Int32>(static_cast<System::Byte>(73)));
-			this->panel1->Controls->Add(this->btnClose);
-			this->panel1->Controls->Add(this->btnRefresh);
-			this->panel1->Dock = System::Windows::Forms::DockStyle::Left;
-			this->panel1->Location = System::Drawing::Point(0, 0);
-			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(203, 851);
-			this->panel1->TabIndex = 3;
+			this->splitContainer1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->splitContainer1->Location = System::Drawing::Point(0, 0);
+			this->splitContainer1->Name = L"splitContainer1";
+			this->splitContainer1->Orientation = System::Windows::Forms::Orientation::Horizontal;
+			// 
+			// splitContainer1.Panel1
+			// 
+			this->splitContainer1->Panel1->Controls->Add(this->dataGridView1);
+			// 
+			// splitContainer1.Panel2
+			// 
+			this->splitContainer1->Panel2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)),
+				static_cast<System::Int32>(static_cast<System::Byte>(51)), static_cast<System::Int32>(static_cast<System::Byte>(73)));
+			this->splitContainer1->Panel2->Controls->Add(this->btnMaJ);
+			this->splitContainer1->Panel2->Controls->Add(this->btnClose);
+			this->splitContainer1->Size = System::Drawing::Size(1584, 851);
+			this->splitContainer1->SplitterDistance = 730;
+			this->splitContainer1->SplitterWidth = 1;
+			this->splitContainer1->TabIndex = 0;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->dataGridView1->Location = System::Drawing::Point(0, 0);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(1584, 730);
+			this->dataGridView1->TabIndex = 0;
 			// 
 			// btnClose
 			// 
@@ -80,36 +112,36 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnClose->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnClose->Location = System::Drawing::Point(12, 12);
+			this->btnClose->Location = System::Drawing::Point(1507, 5);
 			this->btnClose->Name = L"btnClose";
 			this->btnClose->Size = System::Drawing::Size(65, 65);
-			this->btnClose->TabIndex = 25;
+			this->btnClose->TabIndex = 26;
 			this->btnClose->Text = L"X";
 			this->btnClose->UseVisualStyleBackColor = false;
 			// 
-			// btnRefresh
+			// btnMaJ
 			// 
-			this->btnRefresh->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
+			this->btnMaJ->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(71)), static_cast<System::Int32>(static_cast<System::Byte>(76)),
 				static_cast<System::Int32>(static_cast<System::Byte>(98)));
-			this->btnRefresh->FlatAppearance->BorderSize = 0;
-			this->btnRefresh->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnRefresh->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 7.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->btnMaJ->FlatAppearance->BorderSize = 0;
+			this->btnMaJ->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnMaJ->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->btnRefresh->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnMaJ->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnRefresh->Location = System::Drawing::Point(102, 12);
-			this->btnRefresh->Name = L"btnRefresh";
-			this->btnRefresh->Size = System::Drawing::Size(85, 65);
-			this->btnRefresh->TabIndex = 23;
-			this->btnRefresh->Text = L"Refresh";
-			this->btnRefresh->UseVisualStyleBackColor = false;
+			this->btnMaJ->Location = System::Drawing::Point(714, 23);
+			this->btnMaJ->Name = L"btnMaJ";
+			this->btnMaJ->Size = System::Drawing::Size(174, 75);
+			this->btnMaJ->TabIndex = 27;
+			this->btnMaJ->Text = L"Mettre à Jour";
+			this->btnMaJ->UseVisualStyleBackColor = false;
 			// 
 			// TabShop
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1584, 851);
-			this->Controls->Add(this->panel1);
+			this->Controls->Add(this->splitContainer1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->MaximizeBox = false;
 			this->MinimizeBox = false;
@@ -117,7 +149,11 @@ namespace Commande_Composants {
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
 			this->Text = L"TabShop";
 			this->WindowState = System::Windows::Forms::FormWindowState::Maximized;
-			this->panel1->ResumeLayout(false);
+			this->splitContainer1->Panel1->ResumeLayout(false);
+			this->splitContainer1->Panel2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->splitContainer1))->EndInit();
+			this->splitContainer1->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
