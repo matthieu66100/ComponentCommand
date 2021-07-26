@@ -63,7 +63,8 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::Button^ btnUser;
 	private: System::Windows::Forms::Button^ btnQuit;
 	private: System::Windows::Forms::Button^ btnTech;
-	private: System::Windows::Forms::Button^ btnGest;
+	private: System::Windows::Forms::Button^ btnSynth;
+
 	private: System::Windows::Forms::Button^ btnShop;
 	private: System::Windows::Forms::Button^ btnIDC;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -86,7 +87,7 @@ namespace CppCLRWinformsProjekt {
 			this->btnQuit = (gcnew System::Windows::Forms::Button());
 			this->btnGestUtilisateurs = (gcnew System::Windows::Forms::Button());
 			this->btnTech = (gcnew System::Windows::Forms::Button());
-			this->btnGest = (gcnew System::Windows::Forms::Button());
+			this->btnSynth = (gcnew System::Windows::Forms::Button());
 			this->btnIDC = (gcnew System::Windows::Forms::Button());
 			this->btnShop = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
@@ -107,6 +108,7 @@ namespace CppCLRWinformsProjekt {
 			// 
 			this->splitContainer1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->splitContainer1->Location = System::Drawing::Point(0, 0);
+			this->splitContainer1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->splitContainer1->Name = L"splitContainer1";
 			// 
 			// splitContainer1.Panel1
@@ -118,14 +120,15 @@ namespace CppCLRWinformsProjekt {
 			// splitContainer1.Panel2
 			// 
 			this->splitContainer1->Panel2->Controls->Add(this->panel1);
-			this->splitContainer1->Size = System::Drawing::Size(1839, 851);
-			this->splitContainer1->SplitterDistance = 251;
+			this->splitContainer1->Size = System::Drawing::Size(1839, 850);
+			this->splitContainer1->SplitterDistance = 250;
 			this->splitContainer1->TabIndex = 0;
 			// 
 			// splitContainer2
 			// 
 			this->splitContainer2->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->splitContainer2->Location = System::Drawing::Point(0, 0);
+			this->splitContainer2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->splitContainer2->Name = L"splitContainer2";
 			this->splitContainer2->Orientation = System::Windows::Forms::Orientation::Horizontal;
 			// 
@@ -138,11 +141,11 @@ namespace CppCLRWinformsProjekt {
 			// 
 			this->splitContainer2->Panel2->Controls->Add(this->btnGestUtilisateurs);
 			this->splitContainer2->Panel2->Controls->Add(this->btnTech);
-			this->splitContainer2->Panel2->Controls->Add(this->btnGest);
+			this->splitContainer2->Panel2->Controls->Add(this->btnSynth);
 			this->splitContainer2->Panel2->Controls->Add(this->btnIDC);
 			this->splitContainer2->Panel2->Controls->Add(this->btnShop);
-			this->splitContainer2->Size = System::Drawing::Size(251, 851);
-			this->splitContainer2->SplitterDistance = 83;
+			this->splitContainer2->Size = System::Drawing::Size(250, 850);
+			this->splitContainer2->SplitterDistance = 82;
 			this->splitContainer2->TabIndex = 0;
 			// 
 			// btnUser
@@ -157,8 +160,9 @@ namespace CppCLRWinformsProjekt {
 			this->btnUser->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->btnUser->Location = System::Drawing::Point(0, 0);
+			this->btnUser->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnUser->Name = L"btnUser";
-			this->btnUser->Size = System::Drawing::Size(123, 83);
+			this->btnUser->Size = System::Drawing::Size(123, 82);
 			this->btnUser->TabIndex = 0;
 			this->btnUser->Text = L"Utilisateur";
 			this->btnUser->UseVisualStyleBackColor = false;
@@ -174,9 +178,10 @@ namespace CppCLRWinformsProjekt {
 			this->btnQuit->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
 			this->btnQuit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnQuit->Location = System::Drawing::Point(128, 0);
+			this->btnQuit->Location = System::Drawing::Point(127, 0);
+			this->btnQuit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnQuit->Name = L"btnQuit";
-			this->btnQuit->Size = System::Drawing::Size(123, 83);
+			this->btnQuit->Size = System::Drawing::Size(123, 82);
 			this->btnQuit->TabIndex = 1;
 			this->btnQuit->Text = L"Quitter";
 			this->btnQuit->UseVisualStyleBackColor = false;
@@ -193,8 +198,9 @@ namespace CppCLRWinformsProjekt {
 			this->btnGestUtilisateurs->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)),
 				static_cast<System::Int32>(static_cast<System::Byte>(126)), static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->btnGestUtilisateurs->Location = System::Drawing::Point(0, 280);
+			this->btnGestUtilisateurs->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnGestUtilisateurs->Name = L"btnGestUtilisateurs";
-			this->btnGestUtilisateurs->Size = System::Drawing::Size(251, 70);
+			this->btnGestUtilisateurs->Size = System::Drawing::Size(250, 70);
 			this->btnGestUtilisateurs->TabIndex = 8;
 			this->btnGestUtilisateurs->Text = L"Gestion Utilisateurs";
 			this->btnGestUtilisateurs->UseVisualStyleBackColor = true;
@@ -213,33 +219,35 @@ namespace CppCLRWinformsProjekt {
 			this->btnTech->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->btnTech->Location = System::Drawing::Point(0, 210);
+			this->btnTech->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnTech->Name = L"btnTech";
-			this->btnTech->Size = System::Drawing::Size(251, 70);
+			this->btnTech->Size = System::Drawing::Size(250, 70);
 			this->btnTech->TabIndex = 2;
 			this->btnTech->Text = L"Technicien";
 			this->btnTech->UseVisualStyleBackColor = true;
 			this->btnTech->Visible = false;
 			this->btnTech->Click += gcnew System::EventHandler(this, &Form1::btnTech_Click);
 			// 
-			// btnGest
+			// btnSynth
 			// 
-			this->btnGest->Cursor = System::Windows::Forms::Cursors::Arrow;
-			this->btnGest->Dock = System::Windows::Forms::DockStyle::Top;
-			this->btnGest->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
+			this->btnSynth->Cursor = System::Windows::Forms::Cursors::Arrow;
+			this->btnSynth->Dock = System::Windows::Forms::DockStyle::Top;
+			this->btnSynth->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(24)),
 				static_cast<System::Int32>(static_cast<System::Byte>(30)), static_cast<System::Int32>(static_cast<System::Byte>(54)));
-			this->btnGest->FlatAppearance->BorderSize = 0;
-			this->btnGest->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnGest->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
-			this->btnGest->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
+			this->btnSynth->FlatAppearance->BorderSize = 0;
+			this->btnSynth->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnSynth->Font = (gcnew System::Drawing::Font(L"Nirmala UI", 10.2F, System::Drawing::FontStyle::Bold));
+			this->btnSynth->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnGest->Location = System::Drawing::Point(0, 140);
-			this->btnGest->Name = L"btnGest";
-			this->btnGest->Size = System::Drawing::Size(251, 70);
-			this->btnGest->TabIndex = 3;
-			this->btnGest->Text = L"Gestionaire";
-			this->btnGest->UseVisualStyleBackColor = true;
-			this->btnGest->Visible = false;
-			this->btnGest->Click += gcnew System::EventHandler(this, &Form1::btnGest_Click);
+			this->btnSynth->Location = System::Drawing::Point(0, 140);
+			this->btnSynth->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->btnSynth->Name = L"btnSynth";
+			this->btnSynth->Size = System::Drawing::Size(250, 70);
+			this->btnSynth->TabIndex = 3;
+			this->btnSynth->Text = L"Synthèse";
+			this->btnSynth->UseVisualStyleBackColor = true;
+			this->btnSynth->Visible = false;
+			this->btnSynth->Click += gcnew System::EventHandler(this, &Form1::btnSynth_Click);
 			// 
 			// btnIDC
 			// 
@@ -253,8 +261,9 @@ namespace CppCLRWinformsProjekt {
 			this->btnIDC->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->btnIDC->Location = System::Drawing::Point(0, 70);
+			this->btnIDC->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnIDC->Name = L"btnIDC";
-			this->btnIDC->Size = System::Drawing::Size(251, 70);
+			this->btnIDC->Size = System::Drawing::Size(250, 70);
 			this->btnIDC->TabIndex = 5;
 			this->btnIDC->Text = L"IDC";
 			this->btnIDC->UseVisualStyleBackColor = true;
@@ -273,8 +282,9 @@ namespace CppCLRWinformsProjekt {
 			this->btnShop->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
 			this->btnShop->Location = System::Drawing::Point(0, 0);
+			this->btnShop->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btnShop->Name = L"btnShop";
-			this->btnShop->Size = System::Drawing::Size(251, 70);
+			this->btnShop->Size = System::Drawing::Size(250, 70);
 			this->btnShop->TabIndex = 4;
 			this->btnShop->Text = L"Magasin";
 			this->btnShop->UseVisualStyleBackColor = true;
@@ -286,8 +296,9 @@ namespace CppCLRWinformsProjekt {
 			this->panel1->Controls->Add(this->dataGridView1);
 			this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->panel1->Location = System::Drawing::Point(0, 0);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1584, 851);
+			this->panel1->Size = System::Drawing::Size(1585, 850);
 			this->panel1->TabIndex = 3;
 			// 
 			// dataGridView1
@@ -297,11 +308,12 @@ namespace CppCLRWinformsProjekt {
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->dataGridView1->Location = System::Drawing::Point(0, 0);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(1584, 851);
+			this->dataGridView1->Size = System::Drawing::Size(1585, 850);
 			this->dataGridView1->TabIndex = 0;
 			// 
 			// Form1
@@ -310,9 +322,10 @@ namespace CppCLRWinformsProjekt {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(46)), static_cast<System::Int32>(static_cast<System::Byte>(51)),
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
-			this->ClientSize = System::Drawing::Size(1839, 851);
+			this->ClientSize = System::Drawing::Size(1839, 850);
 			this->Controls->Add(this->splitContainer1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 			this->Text = L"Commandes Composants";
@@ -350,7 +363,7 @@ private: System::Void btnUser_Click(System::Object^ sender, System::EventArgs^ e
 	btnIDC->Visible =  false;
 	btnTech->Visible = false;
 	btnShop->Visible = false;
-	btnGest->Visible = false;
+	btnSynth->Visible = false;
 	btnGestUtilisateurs->Visible = false;
 
 	//detection du statut du user et affichage des boutons selon ses droits.
@@ -358,7 +371,7 @@ private: System::Void btnUser_Click(System::Object^ sender, System::EventArgs^ e
 		btnIDC->Visible = true;
 		btnTech->Visible = true;
 		btnShop->Visible = true;
-		//btnGest->Visible = true;
+		btnSynth->Visible = true;
 		btnGestUtilisateurs->Visible = true;
 	}
 	else if (etat == "Tech") {
@@ -373,7 +386,7 @@ private: System::Void btnIDC_Click(System::Object^ sender, System::EventArgs^ e)
 	btnIDC->BackColor = Color::FromArgb(46, 51, 73);
 
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
-	btnGest->BackColor = Color::FromArgb(24, 30, 54);
+	btnSynth->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 	
@@ -381,7 +394,7 @@ private: System::Void btnIDC_Click(System::Object^ sender, System::EventArgs^ e)
 private: System::Void btnTech_Click(System::Object^ sender, System::EventArgs^ e) {
 	btnTech->BackColor = Color::FromArgb(46, 51, 73);
 	
-	btnGest->BackColor = Color::FromArgb(24, 30, 54);
+	btnSynth->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
 	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
@@ -393,8 +406,8 @@ private: System::Void btnTech_Click(System::Object^ sender, System::EventArgs^ e
 	panel1->Controls->Add(commande);
 	commande->Show();
 }
-private: System::Void btnGest_Click(System::Object^ sender, System::EventArgs^ e) {
-	btnGest->BackColor = Color::FromArgb(46, 51, 73);
+private: System::Void btnSynth_Click(System::Object^ sender, System::EventArgs^ e) {
+	btnSynth->BackColor = Color::FromArgb(46, 51, 73);
 
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
@@ -412,7 +425,7 @@ private: System::Void btnShop_Click(System::Object^ sender, System::EventArgs^ e
 	btnShop->BackColor = Color::FromArgb(46, 51, 73);
 
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
-	btnGest->BackColor = Color::FromArgb(24, 30, 54);
+	btnSynth->BackColor = Color::FromArgb(24, 30, 54);
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
 	btnGestUtilisateurs->BackColor = Color::FromArgb(24, 30, 54);
 
@@ -428,7 +441,7 @@ private: System::Void btnGestUtilisateurs_Click(System::Object^ sender, System::
 	btnGestUtilisateurs->BackColor = Color::FromArgb(46, 51, 73);
 
 	btnTech->BackColor = Color::FromArgb(24, 30, 54);
-	btnGest->BackColor = Color::FromArgb(24, 30, 54);
+	btnSynth->BackColor = Color::FromArgb(24, 30, 54);
 	btnShop->BackColor = Color::FromArgb(24, 30, 54);
 	btnIDC->BackColor = Color::FromArgb(24, 30, 54);
 
