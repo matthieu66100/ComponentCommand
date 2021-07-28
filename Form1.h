@@ -27,7 +27,7 @@ namespace CppCLRWinformsProjekt {
 
 			// Initialisation du Tableau au lancement de l'application
 			System::String^ path = gcnew System::String("BDD/Data.txt");
-			array<String^>^ lines = File::ReadAllLines(path);
+			array<String^>^ lines = File::ReadAllLines(path, Encoding::UTF7);
 			dataGridView1->Rows->Clear();
 
 			dataGridView1->Refresh();
@@ -43,12 +43,21 @@ namespace CppCLRWinformsProjekt {
 				dataGridView1->ColumnCount = colTitle->Length;
 				dataGridView1->Columns[j]->Name = colTitle[j];
 			}
+
 			//permet d'afficher les contenus des lignes
 			for (int i = 1; i < lines->Length; i++)
 			{
 				array<String^>^ rowData = lines[i]->Split(';');
 				dataGridView1->Rows->Add(rowData);
 			}
+
+			DataGridViewComboBoxColumn^ cmb = gcnew DataGridViewComboBoxColumn();
+			cmb->HeaderText = "Select Data";
+			cmb->Name = "cmb";
+			cmb->MaxDropDownItems = 4;
+			cmb->Items->Add("True");
+			cmb->Items->Add("False");
+			dataGridView1->Columns->Add(cmb);
 		}
 
 	protected:
@@ -64,7 +73,6 @@ namespace CppCLRWinformsProjekt {
 	private: System::Windows::Forms::Button^ btnQuit;
 	private: System::Windows::Forms::Button^ btnTech;
 	private: System::Windows::Forms::Button^ btnSynth;
-
 	private: System::Windows::Forms::Button^ btnShop;
 	private: System::Windows::Forms::Button^ btnIDC;
 	private: System::Windows::Forms::Panel^ panel1;
@@ -324,7 +332,7 @@ namespace CppCLRWinformsProjekt {
 				static_cast<System::Int32>(static_cast<System::Byte>(73)));
 			this->ClientSize = System::Drawing::Size(1839, 850);
 			this->Controls->Add(this->splitContainer1);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
 			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Form1";
 			this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
