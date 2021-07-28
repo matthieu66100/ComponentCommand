@@ -162,7 +162,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->checkBox1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->checkBox1->Location = System::Drawing::Point(55, 370);
+			this->checkBox1->Location = System::Drawing::Point(55, 392);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(79, 21);
 			this->checkBox1->TabIndex = 26;
@@ -179,7 +179,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnClose->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnClose->Location = System::Drawing::Point(3, 3);
+			this->btnClose->Location = System::Drawing::Point(12, 12);
 			this->btnClose->Name = L"btnClose";
 			this->btnClose->Size = System::Drawing::Size(65, 65);
 			this->btnClose->TabIndex = 25;
@@ -198,7 +198,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnAdd->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnAdd->Location = System::Drawing::Point(0, 721);
+			this->btnAdd->Location = System::Drawing::Point(0, 711);
 			this->btnAdd->Name = L"btnAdd";
 			this->btnAdd->Size = System::Drawing::Size(203, 53);
 			this->btnAdd->TabIndex = 24;
@@ -216,7 +216,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->btnRefresh->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->btnRefresh->Location = System::Drawing::Point(103, 4);
+			this->btnRefresh->Location = System::Drawing::Point(102, 12);
 			this->btnRefresh->Name = L"btnRefresh";
 			this->btnRefresh->Size = System::Drawing::Size(85, 65);
 			this->btnRefresh->TabIndex = 23;
@@ -226,7 +226,7 @@ namespace Commande_Composants {
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(12, 414);
+			this->textBox10->Location = System::Drawing::Point(12, 445);
 			this->textBox10->Multiline = true;
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(181, 164);
@@ -234,7 +234,7 @@ namespace Commande_Composants {
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(12, 342);
+			this->textBox9->Location = System::Drawing::Point(9, 677);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(181, 22);
 			this->textBox9->TabIndex = 21;
@@ -242,42 +242,42 @@ namespace Commande_Composants {
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(12, 297);
+			this->textBox6->Location = System::Drawing::Point(12, 358);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(181, 22);
 			this->textBox6->TabIndex = 18;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(12, 252);
+			this->textBox5->Location = System::Drawing::Point(12, 304);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(181, 22);
 			this->textBox5->TabIndex = 17;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(12, 207);
+			this->textBox4->Location = System::Drawing::Point(12, 249);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(181, 22);
 			this->textBox4->TabIndex = 16;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(12, 162);
+			this->textBox3->Location = System::Drawing::Point(12, 193);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(181, 22);
 			this->textBox3->TabIndex = 15;
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(12, 74);
+			this->textBox7->Location = System::Drawing::Point(12, 83);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(181, 22);
 			this->textBox7->TabIndex = 14;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(12, 117);
+			this->textBox2->Location = System::Drawing::Point(12, 138);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(181, 22);
 			this->textBox2->TabIndex = 14;
@@ -296,7 +296,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label10->Location = System::Drawing::Point(12, 394);
+			this->label10->Location = System::Drawing::Point(12, 425);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(102, 17);
 			this->label10->TabIndex = 12;
@@ -309,7 +309,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label9->Location = System::Drawing::Point(12, 322);
+			this->label9->Location = System::Drawing::Point(9, 657);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(131, 17);
 			this->label9->TabIndex = 11;
@@ -323,7 +323,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label6->Location = System::Drawing::Point(12, 277);
+			this->label6->Location = System::Drawing::Point(12, 338);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(83, 17);
 			this->label6->TabIndex = 8;
@@ -336,7 +336,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label5->Location = System::Drawing::Point(12, 232);
+			this->label5->Location = System::Drawing::Point(12, 284);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(34, 17);
 			this->label5->TabIndex = 7;
@@ -349,7 +349,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label4->Location = System::Drawing::Point(12, 142);
+			this->label4->Location = System::Drawing::Point(12, 173);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(112, 17);
 			this->label4->TabIndex = 6;
@@ -362,7 +362,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label3->Location = System::Drawing::Point(12, 187);
+			this->label3->Location = System::Drawing::Point(12, 229);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(135, 17);
 			this->label3->TabIndex = 5;
@@ -375,7 +375,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label7->Location = System::Drawing::Point(12, 54);
+			this->label7->Location = System::Drawing::Point(12, 63);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(65, 17);
 			this->label7->TabIndex = 4;
@@ -388,7 +388,7 @@ namespace Commande_Composants {
 				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(0)), static_cast<System::Int32>(static_cast<System::Byte>(126)),
 				static_cast<System::Int32>(static_cast<System::Byte>(240)));
-			this->label2->Location = System::Drawing::Point(12, 97);
+			this->label2->Location = System::Drawing::Point(12, 118);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(174, 17);
 			this->label2->TabIndex = 4;
@@ -465,7 +465,7 @@ namespace Commande_Composants {
 			this->splitContainer1->Panel2->Controls->Add(this->label10);
 			this->splitContainer1->Panel2->Controls->Add(this->textBox1);
 			this->splitContainer1->Size = System::Drawing::Size(203, 851);
-			this->splitContainer1->SplitterDistance = 73;
+			this->splitContainer1->SplitterDistance = 83;
 			this->splitContainer1->TabIndex = 27;
 			// 
 			// AffichageTab
