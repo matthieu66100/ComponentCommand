@@ -26,7 +26,7 @@ namespace CppCLRWinformsProjekt {
 			InitializeComponent();
 
 			// Initialisation du Tableau au lancement de l'application
-			System::String^ path = gcnew System::String("BDD/Data.txt");
+			String^ path = gcnew System::String("BDD/Data.txt");
 			array<String^>^ lines = File::ReadAllLines(path, Encoding::UTF7);
 			dataGridView1->Rows->Clear();
 

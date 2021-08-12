@@ -1077,4 +1077,5 @@ Num_Commande;Date_Cde;Urgent;Demandeur_Nom;Division;Pn_Carte;Num_S�rie_Carte;Rep
 2021/0118;03-juin-21;;KASSAH;;E17894JB03;XXX;MA16;A2016517;1;;BESOIN POUR AFFAIRE TIGRE AUS E36297DA01;;SELHA;LQ Demande Selha 08/06;En cours traitement logistique;0 tronico, 0 cofidur, 0 sanmina;;
 2021/0119;04-juin-21;;CLIQUET;;U431BAM01;173497;T1/T2;U431BB26;1;;;;SELHA;LQ Demande Selha 08/06;Attente r�ponse fournisseur;0 tronico, 0 cofidur, 0 sanmina;;
 2021/0120;08-juin-21;;VALLA;;E17382AB;6739;Y2;A1253767;1;;;;SELHA;;En cours traitement logistique;;;
-;;NON;tes nom;division;pn;num serie;;accents pn éèàù;qte;impu;;;;;En cours de traitement;commentaire;;
+2021/00XX;;NON;;coucou;;;;;;;;;;;En cours de traitement;;;
+2021/00XX;2021-7-29;NON;;;;;;;;;;;;;En cours de traitement;;;
