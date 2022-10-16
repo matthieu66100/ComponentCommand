@@ -74,7 +74,6 @@ namespace Commande_Composants {
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::TextBox^ textBox10;
-
 	private: System::Windows::Forms::TextBox^ textBox6;
 	private: System::Windows::Forms::TextBox^ textBox5;
 	private: System::Windows::Forms::TextBox^ textBox4;
@@ -90,13 +89,6 @@ namespace Commande_Composants {
 
 	private: System::ComponentModel::IContainer^ components;
 
-
-	protected:
-
-	protected:
-
-
-	protected:
 
 	private:
 		/// <summary>
@@ -626,7 +618,7 @@ private: System::Void btnAdd_Click(System::Object^ sender, System::EventArgs^ e)
 													";" + 
 													qte +
 													";" + 
-													imputation+
+													imputation +
 													";" +
 													//Com_Technicien
 													";"+

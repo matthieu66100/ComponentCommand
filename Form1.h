@@ -475,7 +475,6 @@ NOTES:
 3-GIT mis à jour regulierement.
 4-Renomer les [design] pour une comprehension ameliorée du code
 5-Ajouter du commentaire code dans les differentes pages
-6-
 
 */
 
@@ -483,7 +482,6 @@ NOTES:
 TODO:
 
 - ajouter les colonnes supplementaires aux tableaux
---coche "urgent" + colonne "urgent"
 --colonne "numero de commande" à coté de gestionaire
 --colonne "kanban crée" à gauche de date de recption
 -trier le numero de commande le plus recent
